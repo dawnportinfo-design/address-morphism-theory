@@ -13,6 +13,7 @@
     "verify": "node scripts/verify-all.cjs",
     "verify:layout": "node scripts/verify-repository-layout.cjs",
     "verify:chapters": "python scripts/verify_chapter_index.py",
+    "verify:zk-materials": "python scripts/verify_zk_materials.py",
     "verify:model": "python scripts/verify_amt_executable_model.py",
     "verify:predicate-dsl": "python scripts/verify_predicate_dsl.py",
     "verify:s-priority": "python scripts/verify_s_priority_plan.py",

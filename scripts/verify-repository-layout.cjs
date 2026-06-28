@@ -10,6 +10,9 @@ const requiredFiles = [
   'REPOSITORY_SPLIT.md',
   'chapters/README.md',
   'chapters/index.json',
+  'zk/README.md',
+  'zk/index.json',
+  'zk/paper-deduplication-map.md',
   'papers/address-morphism-theory-formal-core.tex',
   'papers/address-morphism-theory-full-paper-en-v3.md',
   'papers/address-morphism-theory-ja-v1-master.md',
@@ -23,6 +26,7 @@ const requiredFiles = [
   'verification/s-priority-decomposition-verification.md',
   'scripts/verify_amt_executable_model.py',
   'scripts/verify_chapter_index.py',
+  'scripts/verify_zk_materials.py',
   'scripts/verify_predicate_dsl.py',
   'scripts/verify_s_priority_plan.py',
   'scripts/verify_s_priority_decomposition.py',
@@ -44,7 +48,7 @@ for (const relativePath of requiredFiles) {
   }
 }
 
-for (const topLevel of ['chapters', 'papers', 'notes', 'verification', 'scripts', 'src']) {
+for (const topLevel of ['chapters', 'zk', 'papers', 'notes', 'verification', 'scripts', 'src']) {
   const directory = path.join(root, topLevel);
   if (!fs.existsSync(directory) || !fs.statSync(directory).isDirectory()) {
     errors.push(`missing directory: ${topLevel}`);
