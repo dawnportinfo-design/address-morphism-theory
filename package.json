@@ -1,0 +1,19 @@
+{
+  "name": "address-morphism-theory",
+  "version": "0.1.0",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "description": "Independent research repository for Address Morphism Theory papers, verification notes, and local PDF builds.",
+  "scripts": {
+    "build:english": "python scripts/build_english_paper_pdf.py",
+    "build:bilingual": "python scripts/build_address_morphism_bilingual_pdfs.py",
+    "build:full-pdfs": "node scripts/build_address_morphism_full_pdfs.cjs",
+    "assemble:ja": "powershell -ExecutionPolicy Bypass -File scripts/assemble_address_morphism_ja_v1.ps1",
+    "verify": "node scripts/verify-all.cjs",
+    "verify:layout": "node scripts/verify-repository-layout.cjs",
+    "verify:publication-safety": "python scripts/verify_publication_safety.py",
+    "verify:publication-safety:self-test": "python scripts/verify_publication_safety.py --self-test",
+    "verify:pdfs": "python scripts/verify_pdfs.py"
+  }
+}

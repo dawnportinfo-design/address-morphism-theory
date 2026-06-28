@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+coverage/
+.DS_Store
+*.log
+__pycache__/
+*.pyc
+output/
+out/
+tmp/
+tmp-*
+*.aux
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
