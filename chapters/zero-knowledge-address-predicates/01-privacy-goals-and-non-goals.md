@@ -18,3 +18,10 @@ minimum fact required by the verifier:
 This repository does not claim a complete audited ZK system. It defines a
 ZK-ready envelope and predicate taxonomy. Production circuits require separate
 implementation review and cryptographic audit.
+
+## Executable Model
+
+- Model: [01-privacy-goals-and-non-goals.model.py](models/01-privacy-goals-and-non-goals.model.py)
+- Fixture: [01-privacy-goals-and-non-goals.model-tests.json](models/01-privacy-goals-and-non-goals.model-tests.json)
+
+The model is a local mathematical reference for this chapter's claims. It is not a production resolver, postal engine, or audited cryptographic circuit.

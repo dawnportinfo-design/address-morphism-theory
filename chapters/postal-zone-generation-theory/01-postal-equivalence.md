@@ -17,3 +17,10 @@ Postal equivalence may be derived from:
 - settlement clusters
 - AGID grid cells
 - verified handoff points
+
+## Executable Model
+
+- Model: [01-postal-equivalence.model.py](models/01-postal-equivalence.model.py)
+- Fixture: [01-postal-equivalence.model-tests.json](models/01-postal-equivalence.model-tests.json)
+
+The model is a local mathematical reference for this chapter's claims. It is not a production resolver, postal engine, or audited cryptographic circuit.

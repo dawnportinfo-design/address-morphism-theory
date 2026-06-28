@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "postal-zone-generation-theory",
+  "chapter": "03-no-postcode-and-weak-postcode-regions.md",
+  "title": "No-Postcode and Weak-Postcode Regions",
+  "model": "chapters/postal-zone-generation-theory/models/03-no-postcode-and-weak-postcode-regions.model.py",
+  "tests": [
+    {
+      "id": "03-no-postcode-and-weak-postcode-regions-runs",
+      "command": "python chapters/postal-zone-generation-theory/models/03-no-postcode-and-weak-postcode-regions.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "03-no-postcode-and-weak-postcode-regions-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

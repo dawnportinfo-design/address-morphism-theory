@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "2026-06-29",
+  "title": "Zero-Knowledge Address Materials Index",
+  "canonicalPaper": "papers/address-morphism-theory-ii-zero-knowledge-address-predicates.md",
+  "categories": [
+    {
+      "id": "theory",
+      "title": "Theory",
+      "directory": "zk/theory",
+      "readme": "zk/theory/README.md",
+      "purpose": "Define privacy goals, predicate semantics, and the relation between AMT and ZK address claims."
+    },
+    {
+      "id": "specification",
+      "title": "Specification",
+      "directory": "zk/specification",
+      "readme": "zk/specification/README.md",
+      "purpose": "Define commitments, nullifiers, public signals, proof bundles, verifier policy, and lifecycle."
+    },
+    {
+      "id": "implementation",
+      "title": "Implementation",
+      "directory": "zk/implementation",
+      "readme": "zk/implementation/README.md",
+      "purpose": "Point to executable models and tests that are safe to publish without private material."
+    },
+    {
+      "id": "applications",
+      "title": "Applications",
+      "directory": "zk/applications",
+      "readme": "zk/applications/README.md",
+      "purpose": "Describe product use cases such as private delivery, hotel checks, POS, locker, and Web3 boundaries."
+    },
+    {
+      "id": "unverified",
+      "title": "Unverified Claims",
+      "directory": "zk/unverified",
+      "readme": "zk/unverified/README.md",
+      "purpose": "Keep open claims, external audit requirements, and unsafe wording out of canonical claims."
+    }
+  ],
+  "paperRoles": [
+    {
+      "file": "papers/address-morphism-theory-ii-zero-knowledge-address-predicates.md",
+      "role": "canonical",
+      "language": "en",
+      "use": "Main ZK address predicate paper."
+    },
+    {
+      "file": "papers/address-morphism-theory-ii-zero-knowledge-address-predicates-ja-v1.md",
+      "role": "localized",
+      "language": "ja",
+      "use": "Japanese localized version of the canonical ZK address predicate paper."
+    },
+    {
+      "file": "papers/zk-address-predicate-paper-en-v1.md",
+      "role": "companion",
+      "language": "en",
+      "use": "Companion paper with additional explanation; do not treat as a second canonical source."
+    },
+    {
+      "file": "papers/zero-knowledge-address-proofs-from-address-morphism-theory-ja.md",
+      "role": "derived",
+      "language": "ja",
+      "use": "Derived Japanese explainer for AMT to ZK proof connection."
+    },
+    {
+      "file": "papers/zk-address-proofs-and-address-morphism-theory-paper-draft.md",
+      "role": "historical-draft",
+      "language": "en",
+      "use": "Historical draft retained for traceability."
+    }
+  ],
+  "executableModels": [
+    {
+      "file": "src/address_morphism/predicate_dsl.py",
+      "role": "reference-model",
+      "verification": "scripts/verify_predicate_dsl.py"
+    }
+  ]
+}

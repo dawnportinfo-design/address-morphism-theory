@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "address-morphism-theory",
+  "chapter": "03-evidence-gates-and-abstention.md",
+  "title": "Evidence Gates and Abstention",
+  "model": "chapters/address-morphism-theory/models/03-evidence-gates-and-abstention.model.py",
+  "tests": [
+    {
+      "id": "03-evidence-gates-and-abstention-runs",
+      "command": "python chapters/address-morphism-theory/models/03-evidence-gates-and-abstention.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "03-evidence-gates-and-abstention-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

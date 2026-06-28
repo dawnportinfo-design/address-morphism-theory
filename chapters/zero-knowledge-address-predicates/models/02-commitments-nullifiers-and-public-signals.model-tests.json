@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "zero-knowledge-address-predicates",
+  "chapter": "02-commitments-nullifiers-and-public-signals.md",
+  "title": "Commitments, Nullifiers, and Public Signals",
+  "model": "chapters/zero-knowledge-address-predicates/models/02-commitments-nullifiers-and-public-signals.model.py",
+  "tests": [
+    {
+      "id": "02-commitments-nullifiers-and-public-signals-runs",
+      "command": "python chapters/zero-knowledge-address-predicates/models/02-commitments-nullifiers-and-public-signals.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "02-commitments-nullifiers-and-public-signals-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

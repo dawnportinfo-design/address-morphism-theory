@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "address-machine-translation-theory",
+  "chapter": "03-quality-feedback-and-abstention.md",
+  "title": "Quality Feedback and Abstention",
+  "model": "chapters/address-machine-translation-theory/models/03-quality-feedback-and-abstention.model.py",
+  "tests": [
+    {
+      "id": "03-quality-feedback-and-abstention-runs",
+      "command": "python chapters/address-machine-translation-theory/models/03-quality-feedback-and-abstention.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "03-quality-feedback-and-abstention-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

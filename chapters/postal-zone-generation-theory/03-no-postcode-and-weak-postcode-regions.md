@@ -12,3 +12,10 @@ Recommended classes:
 - no postal code plus weak open geographic data
 
 Each class should have different validation gates and user interface behavior.
+
+## Executable Model
+
+- Model: [03-no-postcode-and-weak-postcode-regions.model.py](models/03-no-postcode-and-weak-postcode-regions.model.py)
+- Fixture: [03-no-postcode-and-weak-postcode-regions.model-tests.json](models/03-no-postcode-and-weak-postcode-regions.model-tests.json)
+
+The model is a local mathematical reference for this chapter's claims. It is not a production resolver, postal engine, or audited cryptographic circuit.

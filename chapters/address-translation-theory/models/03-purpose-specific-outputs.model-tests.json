@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "address-translation-theory",
+  "chapter": "03-purpose-specific-outputs.md",
+  "title": "Purpose-Specific Outputs",
+  "model": "chapters/address-translation-theory/models/03-purpose-specific-outputs.model.py",
+  "tests": [
+    {
+      "id": "03-purpose-specific-outputs-runs",
+      "command": "python chapters/address-translation-theory/models/03-purpose-specific-outputs.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "03-purpose-specific-outputs-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

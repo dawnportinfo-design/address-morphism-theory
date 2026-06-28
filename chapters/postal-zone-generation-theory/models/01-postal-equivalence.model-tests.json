@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "postal-zone-generation-theory",
+  "chapter": "01-postal-equivalence.md",
+  "title": "Postal Equivalence",
+  "model": "chapters/postal-zone-generation-theory/models/01-postal-equivalence.model.py",
+  "tests": [
+    {
+      "id": "01-postal-equivalence-runs",
+      "command": "python chapters/postal-zone-generation-theory/models/01-postal-equivalence.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "01-postal-equivalence-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

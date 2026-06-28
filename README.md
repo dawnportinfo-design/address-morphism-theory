@@ -27,6 +27,9 @@ states are part of the theory, not implementation failures.
   model, then inspect `verification/address-morphism-executable-expectations.md`.
   For privacy predicates, run `npm run verify:predicate-dsl` and inspect
   `src/address_morphism/predicate_dsl.py`.
+- **ZK reviewer:** start with `zk/README.md`. It splits ZK materials into
+  theory, specification, implementation, applications, and unverified claims,
+  and explains which paper is canonical.
 - **Standards / public-sector reader:** read the scope and non-goals in the
   formal core, then `verification/repository-content-gap-audit.md` for the
   trust and artifact roadmap.
@@ -39,6 +42,8 @@ states are part of the theory, not implementation failures.
 ## Repository Layout
 
 - `chapters/` - chapterized reader paths split by theory type and paper series.
+- `zk/` - canonical ZK material map, specification notes, app notes, and
+  duplicate-paper cleanup guidance.
 - `papers/` - active English and Japanese manuscripts.
 - `notes/` - chapter drafts, outlines, and research resumes.
 - `verification/` - claim maps, expectation tests, audits, and verification boundaries.
@@ -48,12 +53,19 @@ states are part of the theory, not implementation failures.
 
 ## Chapterized Reading Paths
 
+- Cross-series table of contents: `chapters/table-of-contents.md`
 - Core AMT: `chapters/address-morphism-theory/`
 - Zero-knowledge address predicates: `chapters/zero-knowledge-address-predicates/`
+- ZK material map: `zk/README.md`
 - Address translation theory: `chapters/address-translation-theory/`
+- Address machine translation theory: `chapters/address-machine-translation-theory/`
 - Postal-zone generation theory: `chapters/postal-zone-generation-theory/`
 
 The chapter index is machine-checked by `npm run verify:chapters`.
+The ZK material map is machine-checked by `npm run verify:zk-materials`.
+Each chapter now has a paired executable mathematical model under the chapter
+series' `models/` directory, plus a `*.model-tests.json` fixture. These models
+are small local references for claims, not production systems.
 
 ## Primary Manuscripts
 
@@ -80,6 +92,7 @@ The chapter index is machine-checked by `npm run verify:chapters`.
 npm run verify:model
 npm run verify:chapters
 npm run verify:predicate-dsl
+npm run verify:zk-materials
 npm run build:full-pdfs
 npm run build:bilingual
 npm run verify
@@ -99,6 +112,9 @@ monotonicity, and predicate anonymity-set checks.
 `npm run verify:predicate-dsl` runs a small zero-knowledge-ready predicate model
 that evaluates region, quality, freshness, consent, revocation, nullifier, and
 anonymity-set rules without exposing raw address material in public signals.
+`npm run verify:zk-materials` verifies that ZK materials are separated into
+theory, specification, implementation, applications, and unverified claims, and
+that exactly one ZK paper is marked canonical.
 `npm run verify:s-priority-decomposition` verifies that the highest-risk
 unverified claims are decomposed by region, use case, data source, metrics, and
 failure behavior, and that failure states block precise verified issuance.

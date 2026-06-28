@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "address-translation-theory",
+  "chapter": "02-three-layer-model.md",
+  "title": "Three-Layer Model",
+  "model": "chapters/address-translation-theory/models/02-three-layer-model.model.py",
+  "tests": [
+    {
+      "id": "02-three-layer-model-runs",
+      "command": "python chapters/address-translation-theory/models/02-three-layer-model.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "02-three-layer-model-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

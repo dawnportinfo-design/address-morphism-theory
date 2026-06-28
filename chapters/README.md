@@ -25,8 +25,36 @@ separates the work into smaller, maintainable reading paths.
   structures, without publishing raw address material.
 - `address-translation-theory/` - purpose-specific restructuring of address
   data across languages, institutions, and forms.
+- `address-machine-translation-theory/` - guarded address machine translation
+  with rules, AI assistance, geo evidence, confidence, and abstention.
 - `postal-zone-generation-theory/` - postal-code and postal-equivalent zone
   design for countries with missing or weak postal systems.
+
+## Table Of Contents
+
+- `table-of-contents.md` - cross-series table of contents.
+- `address-morphism-theory/toc.md` - core Address Morphism Theory chapters.
+- `zero-knowledge-address-predicates/toc.md` - ZK address predicate chapters.
+- `address-translation-theory/toc.md` - address translation theory chapters.
+- `address-machine-translation-theory/toc.md` - address machine translation theory chapters.
+- `postal-zone-generation-theory/toc.md` - postal-zone generation theory chapters.
+
+## Chapter Model Layout
+
+Each chapter keeps its prose file in the series directory and its executable
+mathematical model under that series' `models/` directory:
+
+```text
+chapters/<series>/
+  01-example-chapter.md
+  models/
+    01-example-chapter.model.py
+    01-example-chapter.model-tests.json
+```
+
+The model is intentionally small and dependency-free. It is not a production
+resolver, postal engine, or audited ZK circuit; it is a runnable statement of
+the mathematical boundary claimed by the chapter.
 
 ## Maintenance Rules
 
@@ -35,4 +63,7 @@ separates the work into smaller, maintainable reading paths.
 3. Every series must declare its `kind`, `status`, and `sourcePaper`.
 4. No chapter may contain raw personal address fixtures, recipients, witnesses,
    private keys, or proof material.
-5. Executable claims should point to `src/` or `verification/`, not only prose.
+5. Every chapter must declare `modelFile` and `modelTests`.
+6. Every chapter model must run locally through `npm run verify:chapters`.
+7. Executable claims should point to chapter models, `src/`, or `verification/`,
+   not only prose.

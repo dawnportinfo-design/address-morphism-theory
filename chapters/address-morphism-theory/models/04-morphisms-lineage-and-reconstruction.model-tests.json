@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "address-morphism-theory",
+  "chapter": "04-morphisms-lineage-and-reconstruction.md",
+  "title": "Morphisms, Lineage, and Reconstruction",
+  "model": "chapters/address-morphism-theory/models/04-morphisms-lineage-and-reconstruction.model.py",
+  "tests": [
+    {
+      "id": "04-morphisms-lineage-and-reconstruction-runs",
+      "command": "python chapters/address-morphism-theory/models/04-morphisms-lineage-and-reconstruction.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "04-morphisms-lineage-and-reconstruction-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

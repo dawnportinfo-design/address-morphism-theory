@@ -32,3 +32,10 @@ A resolver is allowed to emit a precise identifier only when the candidate set,
 evidence gate, purpose context, and disclosure policy all support that emission.
 Otherwise it must return a non-final state such as `unresolved`, `ambiguous`,
 `conditional`, or `rejected`.
+
+## Executable Model
+
+- Model: [01-problem-and-scope.model.py](models/01-problem-and-scope.model.py)
+- Fixture: [01-problem-and-scope.model-tests.json](models/01-problem-and-scope.model-tests.json)
+
+The model is a local mathematical reference for this chapter's claims. It is not a production resolver, postal engine, or audited cryptographic circuit.

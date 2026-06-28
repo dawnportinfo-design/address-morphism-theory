@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "address-morphism-theory",
+  "chapter": "05-protocol-boundaries-and-applications.md",
+  "title": "Protocol Boundaries and Applications",
+  "model": "chapters/address-morphism-theory/models/05-protocol-boundaries-and-applications.model.py",
+  "tests": [
+    {
+      "id": "05-protocol-boundaries-and-applications-runs",
+      "command": "python chapters/address-morphism-theory/models/05-protocol-boundaries-and-applications.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "05-protocol-boundaries-and-applications-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}
