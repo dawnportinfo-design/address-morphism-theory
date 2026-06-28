@@ -1,0 +1,352 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,amscd}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\title{Address Morphism Theory: A Formal Core}
+\author{Address Morphism Theory Project}
+\date{Draft v0.1 -- 2026-06-29}
+
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\newcommand{\Surf}{\mathsf{S}}
+\newcommand{\Tok}{\mathsf{T}}
+\newcommand{\Ent}{\mathsf{E}}
+\newcommand{\Cand}{\mathsf{C}}
+\newcommand{\Out}{\mathsf{O}}
+\newcommand{\Hist}{\mathsf{H}}
+\newcommand{\Ctx}{\mathsf{X}}
+\newcommand{\PID}{\mathsf{PID}}
+\newcommand{\AGID}{\mathsf{AGID}}
+\newcommand{\AOID}{\mathsf{AOID}}
+\newcommand{\Resolved}{\mathsf{resolved}}
+\newcommand{\Ambiguous}{\mathsf{ambiguous}}
+\newcommand{\Unresolved}{\mathsf{unresolved}}
+\newcommand{\Rejected}{\mathsf{rejected}}
+\newcommand{\Conditional}{\mathsf{conditional}}
+\newcommand{\Evidence}{\mathsf{Ev}}
+\newcommand{\View}{\mathsf{V}}
+\newcommand{\Opt}{\operatorname{Opt}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Pow}{\mathcal{P}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Address Morphism Theory (AMT) models an address as a context-indexed,
+evidence-bound partial morphism from surface expressions to typed referents.
+The goal is not to prove that every address can be resolved. The goal is to
+state when resolution is possible, when a system must abstain, and why false
+precision is a theoretical error rather than a mere implementation defect.
+This short note extracts the formal core of AMT from the larger manuscripts.
+\end{abstract}
+
+\section{Novelty Claim}
+
+Most address systems treat an address as one of the following: a formatted
+postal string, a coordinate, a postal-code lookup, or a geocoding result. AMT
+instead treats address resolution as a chain of typed morphisms under context,
+time, evidence, and disclosure policy. Ambiguity, unresolved states, lineage,
+and gate-controlled identifier issuance are not edge cases. They are part of
+the model.
+
+\section{Objects}
+
+\begin{definition}[Surface expression]
+For time \(t\), let \(\Surf_t\) be the set of surface address expressions:
+postal strings, partial names, facility names, postal codes, coordinates,
+grid labels, \(\AGID\)-like public references, or \(\AOID\)-like private
+operation references.
+\end{definition}
+
+\begin{definition}[Typed referent]
+For context \(\chi \in \Ctx\) and time \(t\), let
+\(\Ent_{\chi,t}\) be a typed set of addressable referents. A referent may be a
+unit, building, parcel, entrance, road segment, bridge, port, locker, island,
+mountain, cultural site, temporary shelter, virtual town, or administrative
+object.
+\end{definition}
+
+\begin{definition}[Resolution outcome]
+Let
+\[
+\Out_{\chi,t}
+  = \Ent_{\chi,t}
+    \cup \{\Conditional,\Ambiguous,\Unresolved,\Rejected\}.
+\]
+The non-final states are first-class outcomes. A resolver that cannot safely
+select a referent must return one of them rather than emit a false identifier.
+\(\Conditional\) denotes a bounded operational answer such as ``deliverable
+only through this entrance'', ``handoff only after human review'', or
+``valid only until expiry''. It is not the same as a context-free proof of a
+unique address referent.
+\end{definition}
+
+\section{Morphism Chain}
+
+AMT models resolution as a partial, evidence-sensitive chain:
+\[
+\Surf_t
+  \xrightarrow{\pi_t}
+\Tok_t
+  \xrightarrow{\varepsilon_t}
+\Pow(\Ent_{\chi,t})
+  \xrightarrow{\kappa_{\chi,t}}
+\Cand_{\chi,t}
+  \xrightarrow{\rho_{\chi,t}}
+\Out_{\chi,t}.
+\]
+
+\begin{itemize}[leftmargin=1.5em]
+\item \(\pi_t\) parses a surface expression into typed tokens.
+\item \(\varepsilon_t\) expands aliases, languages, historical names, and
+nearby candidates.
+\item \(\kappa_{\chi,t}\) assigns evidence, source, lineage, and risk
+information.
+\item \(\rho_{\chi,t}\) resolves, abstains, or rejects under context \(\chi\).
+\end{itemize}
+
+\section{Conditional Commutative Diagrams}
+
+AMT diagrams are conditional. They commute only when the required evidence,
+candidate coverage, source freshness, and gate predicates hold.
+
+\subsection{Observation and Partial Inversion}
+
+\[
+\begin{CD}
+\Ent_{\chi,t} @>{\operatorname{obs}_{\chi,t}}>> \Surf_t \\
+@V{\operatorname{id}}VV @VV{\rho_{\chi,t}\circ\kappa_{\chi,t}\circ\varepsilon_t\circ\pi_t}V \\
+\Ent_{\chi,t} @<{\operatorname{select}}<< \Out_{\chi,t}
+\end{CD}
+\]
+
+This square is not assumed to commute for all entities. If
+\(\operatorname{obs}_{\chi,t}\) is non-injective, a total perfect inverse cannot
+exist.
+
+\subsection{Gate-Controlled Identifier Issuance}
+
+\[
+\begin{CD}
+\Cand_{\chi,t} @>{G_{\chi,t}}>> \{\mathsf{accept},\mathsf{reject}\} \\
+@V{\rho_{\chi,t}}VV @VV{\iota_{\chi,t}}V \\
+\Out_{\chi,t} @>{I_{\chi,t}}>> \PID \cup \{\mathsf{no\_emit}\}
+\end{CD}
+\]
+
+Identifier issuance is permitted only when the certified gate \(G_{\chi,t}\)
+accepts the candidate and the resolution outcome is sufficiently precise.
+
+\section{Assumptions}
+
+\begin{assumption}[Finite operational candidates]
+For a concrete resolution request, the system evaluates a finite candidate set.
+\end{assumption}
+
+\begin{assumption}[Explicit non-emission]
+If candidate coverage, source quality, freshness, context, or risk gates are
+insufficient, the system may output \(\Ambiguous\), \(\Unresolved\), or
+\(\Rejected\).
+\end{assumption}
+
+\begin{assumption}[Declared context]
+Every resolution claim is relative to a context \(\chi\), such as delivery,
+emergency response, property administration, hotel handoff, locker pickup, or
+private proof.
+\end{assumption}
+
+\section{Core Theorems}
+
+\begin{theorem}[Address reference impossibility]
+Suppose there exist distinct referents \(e_1,e_2 \in \Ent_{\chi,t}\) such that
+\[
+\operatorname{obs}_{\chi,t}(e_1)=\operatorname{obs}_{\chi,t}(e_2).
+\]
+Then no deterministic resolver
+\[
+R:\Surf_t\to\Ent_{\chi,t}
+\]
+can be both total and correct for every referent under this observation map.
+\end{theorem}
+
+\begin{proof}
+Let \(s=\operatorname{obs}_{\chi,t}(e_1)=\operatorname{obs}_{\chi,t}(e_2)\).
+Since \(R\) is a function, \(R(s)\) has one value. Correctness for \(e_1\)
+requires \(R(s)=e_1\). Correctness for \(e_2\) requires \(R(s)=e_2\). This
+contradicts \(e_1\ne e_2\). Therefore such a resolver cannot exist.
+\end{proof}
+
+\begin{corollary}[Unresolved is necessary]
+If observation, normalization, candidate generation, or projection can collapse
+distinct referents, a safe resolver needs a non-emitting outcome.
+\end{corollary}
+
+\begin{proposition}[Lineage is relational]
+Administrative splits and merges cannot in general be represented by a single
+successor function \(f:\Hist_t\to\Hist_{t+1}\). They require a relation
+\[
+L_t \subseteq \Hist_t \times \Hist_{t+1}.
+\]
+\end{proposition}
+
+\begin{proof}
+If one historical address state splits into two successor states, a single
+function can choose only one successor for that input. The other successor is
+lost. A relation can preserve both.
+\end{proof}
+
+\section{Context-Relative Optimality}
+
+\begin{definition}[Context utility]
+For a surface expression \(s\), context \(\chi\), time \(t\), and candidate
+referent \(e \in \Ent_{\chi,t}\), let
+\[
+U_{\chi,t}(e,s) \in \mathbb{R}
+\]
+be the operational utility of returning \(e\). The utility may encode delivery
+success, emergency access, legal notice, hotel handoff, locker pickup, privacy
+risk, or a weighted combination of these terms.
+\end{definition}
+
+\begin{definition}[Context-optimal candidate set]
+Given a non-empty candidate set \(C_{\chi,t}(s)\subseteq\Ent_{\chi,t}\), define
+\[
+\Opt_{\chi,t}(s)
+  = \arg\max_{e\in C_{\chi,t}(s)} U_{\chi,t}(e,s).
+\]
+If \(|\Opt_{\chi,t}(s)|>1\), the resolver has a context-level tie and must not
+claim unique optimality.
+\end{definition}
+
+\begin{theorem}[No context-free operational optimum]
+Suppose there are two contexts \(\chi_1,\chi_2\), one surface expression \(s\),
+and two candidates \(e_a,e_b\) such that
+\[
+U_{\chi_1,t}(e_a,s)>U_{\chi_1,t}(e_b,s)
+\quad\text{and}\quad
+U_{\chi_2,t}(e_b,s)>U_{\chi_2,t}(e_a,s).
+\]
+Then there is no single context-free resolver that is operationally optimal for
+both contexts on \(s\).
+\end{theorem}
+
+\begin{proof}
+A deterministic context-free resolver must return one candidate for \(s\). If
+it returns \(e_a\), it is not optimal under \(\chi_2\). If it returns \(e_b\),
+it is not optimal under \(\chi_1\). Therefore operational optimality is a
+context-indexed claim.
+\end{proof}
+
+\section{Entropy and Evidence}
+
+\begin{definition}[Address reference entropy]
+Let \(p_{\chi,t}(e\mid s)\) be the posterior candidate distribution over
+\(C_{\chi,t}(s)\). The address reference entropy of \(s\) is
+\[
+H_{\chi,t}(s)
+  =
+  -\sum_{e\in C_{\chi,t}(s)}
+    p_{\chi,t}(e\mid s)\log p_{\chi,t}(e\mid s).
+\]
+Entropy measures referential uncertainty, not truth. Low entropy can still be
+wrong if the evidence pipeline is biased or incomplete.
+\end{definition}
+
+\begin{proposition}[Evidence may reduce uncertainty, not define truth]
+Let \(\Evidence\) be an evidence update that changes the posterior from
+\(p_{\chi,t}\) to \(p'_{\chi,t}\). If \(\Evidence\) increases the posterior mass
+of one correct candidate without adding new collisions or source conflicts,
+then \(H'_{\chi,t}(s) < H_{\chi,t}(s)\) may hold. However, entropy reduction
+alone does not imply correctness.
+\end{proposition}
+
+\begin{proof}
+The entropy statement follows from concentrating posterior mass under the
+stated condition. Correctness does not follow from entropy alone because a
+posterior may concentrate on an incorrect candidate when candidate generation,
+source trust, or normalization is wrong.
+\end{proof}
+
+\begin{theorem}[Abstention monotonicity]
+For fixed \(s,\chi,t\), if the evidence set, candidate set, gate policy, and
+freshness metadata are unchanged, then a safe resolver that outputs
+\(\Unresolved\), \(\Ambiguous\), or \(\Rejected\) must not later output
+\(\Resolved\) merely because time has passed.
+\end{theorem}
+
+\begin{proof}
+Without new evidence, a changed candidate set, a changed policy, or refreshed
+metadata, the proof obligation for safe emission is identical. Emitting a
+resolved identifier after abstention would therefore introduce precision not
+supported by any new premise.
+\end{proof}
+
+\section{Privacy Predicates}
+
+\begin{definition}[Disclosure view]
+A disclosure view is a partial map
+\[
+\View_{\chi,t}:\Ent_{\chi,t}\rightharpoonup D
+\]
+that reveals only the fields needed for a purpose, such as country eligibility,
+delivery zone membership, or locker handoff status.
+\end{definition}
+
+\begin{definition}[Predicate anonymity set]
+For a predicate \(P:\Ent_{\chi,t}\to\{0,1\}\), define the anonymity set
+\[
+A_P=\{e\in \Ent_{\chi,t}:P(e)=1\}.
+\]
+\end{definition}
+
+\begin{proposition}[Private proof granularity]
+If \(|A_P|=1\), then proving \(P(e)=1\) identifies the referent within the
+modeled universe even if the proof system hides the raw address string. A
+privacy-preserving deployment therefore needs a declared minimum anonymity
+threshold \(k\) and must treat predicates with \(|A_P|<k\) as unsafe for public
+proof.
+\end{proposition}
+
+\begin{proof}
+When the satisfying set has one element, the predicate value uniquely selects
+that element. Cryptography can hide the witness representation, but it cannot
+change the information disclosed by the predicate itself.
+\end{proof}
+
+\section{Executable Artifact Boundary}
+
+The repository should include a local executable model that checks the minimal
+negative cases:
+
+\begin{enumerate}[leftmargin=1.5em]
+\item non-injective observation creates ambiguity;
+\item missing candidates create unresolved;
+\item quality gate failure prevents identifier emission;
+\item lineage split is non-functional;
+\item no-postcode regions can still be handled as evidence-bound referents.
+\item context changes can change the optimal referent;
+\item evidence can reduce ambiguity without proving global truth;
+\item abstention is monotone without new evidence;
+\item privacy predicates require minimum anonymity sets.
+\end{enumerate}
+
+These checks do not prove global geographic coverage. They prove that the
+repository contains a concrete implementation of AMT's abstention discipline.
+
+\section{Non-Goals}
+
+AMT does not replace postal standards, cadastral law, national address
+databases, geocoding APIs, GIS engines, delivery-carrier contracts, or
+cryptographic proof systems. It supplies a formal layer that says how these
+systems can be composed without pretending that every address is a unique,
+stable, globally resolvable string.
+
+\end{document}
