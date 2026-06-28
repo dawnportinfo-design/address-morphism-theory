@@ -8,6 +8,8 @@ const requiredFiles = [
   'LICENSE',
   'package.json',
   'REPOSITORY_SPLIT.md',
+  'chapters/README.md',
+  'chapters/index.json',
   'papers/address-morphism-theory-formal-core.tex',
   'papers/address-morphism-theory-full-paper-en-v3.md',
   'papers/address-morphism-theory-ja-v1-master.md',
@@ -20,6 +22,8 @@ const requiredFiles = [
   'verification/s-priority-decomposition-gate.json',
   'verification/s-priority-decomposition-verification.md',
   'scripts/verify_amt_executable_model.py',
+  'scripts/verify_chapter_index.py',
+  'scripts/verify_predicate_dsl.py',
   'scripts/verify_s_priority_plan.py',
   'scripts/verify_s_priority_decomposition.py',
   'scripts/build_address_morphism_full_pdfs.cjs',
@@ -40,7 +44,7 @@ for (const relativePath of requiredFiles) {
   }
 }
 
-for (const topLevel of ['papers', 'notes', 'verification', 'scripts']) {
+for (const topLevel of ['chapters', 'papers', 'notes', 'verification', 'scripts', 'src']) {
   const directory = path.join(root, topLevel);
   if (!fs.existsSync(directory) || !fs.statSync(directory).isDirectory()) {
     errors.push(`missing directory: ${topLevel}`);
