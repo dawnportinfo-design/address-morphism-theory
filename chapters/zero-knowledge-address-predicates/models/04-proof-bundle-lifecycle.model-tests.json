@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "zero-knowledge-address-predicates",
+  "chapter": "04-proof-bundle-lifecycle.md",
+  "title": "Proof Bundle Lifecycle",
+  "model": "chapters/zero-knowledge-address-predicates/models/04-proof-bundle-lifecycle.model.py",
+  "tests": [
+    {
+      "id": "04-proof-bundle-lifecycle-runs",
+      "command": "python chapters/zero-knowledge-address-predicates/models/04-proof-bundle-lifecycle.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "04-proof-bundle-lifecycle-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

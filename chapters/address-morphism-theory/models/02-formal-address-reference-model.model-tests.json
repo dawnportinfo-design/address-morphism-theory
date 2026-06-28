@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "address-morphism-theory",
+  "chapter": "02-formal-address-reference-model.md",
+  "title": "Formal Address Reference Model",
+  "model": "chapters/address-morphism-theory/models/02-formal-address-reference-model.model.py",
+  "tests": [
+    {
+      "id": "02-formal-address-reference-model-runs",
+      "command": "python chapters/address-morphism-theory/models/02-formal-address-reference-model.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "02-formal-address-reference-model-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "zero-knowledge-address-predicates",
+  "chapter": "01-privacy-goals-and-non-goals.md",
+  "title": "Privacy Goals and Non-Goals",
+  "model": "chapters/zero-knowledge-address-predicates/models/01-privacy-goals-and-non-goals.model.py",
+  "tests": [
+    {
+      "id": "01-privacy-goals-and-non-goals-runs",
+      "command": "python chapters/zero-knowledge-address-predicates/models/01-privacy-goals-and-non-goals.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "01-privacy-goals-and-non-goals-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

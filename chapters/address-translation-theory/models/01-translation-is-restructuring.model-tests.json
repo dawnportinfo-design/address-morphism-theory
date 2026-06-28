@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "address-translation-theory",
+  "chapter": "01-translation-is-restructuring.md",
+  "title": "Translation Is Restructuring",
+  "model": "chapters/address-translation-theory/models/01-translation-is-restructuring.model.py",
+  "tests": [
+    {
+      "id": "01-translation-is-restructuring-runs",
+      "command": "python chapters/address-translation-theory/models/01-translation-is-restructuring.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "01-translation-is-restructuring-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

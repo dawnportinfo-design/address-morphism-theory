@@ -1,6 +1,8 @@
 {
   "schemaVersion": "2026-06-29",
   "repository": "address-morphism-theory",
+  "description": "Chapter index for Address Morphism Theory and companion address theories. Every chapter has a prose file, an executable mathematical model, and model fixtures.",
+  "rootToc": "chapters/table-of-contents.md",
   "series": [
     {
       "id": "address-morphism-theory",
@@ -8,36 +10,55 @@
       "kind": "core-theory",
       "status": "active",
       "sourcePaper": "papers/address-morphism-theory-full-paper-en-v3.md",
+      "tocFile": "chapters/address-morphism-theory/toc.md",
       "chapters": [
         {
           "order": 1,
           "file": "chapters/address-morphism-theory/01-problem-and-scope.md",
-          "title": "Problem and Scope"
+          "title": "Problem and Scope",
+          "description": "Defines the address reference problem, non-goals, and when a resolver must abstain.",
+          "modelFile": "chapters/address-morphism-theory/models/01-problem-and-scope.model.py",
+          "modelTests": "chapters/address-morphism-theory/models/01-problem-and-scope.model-tests.json"
         },
         {
           "order": 2,
           "file": "chapters/address-morphism-theory/02-formal-address-reference-model.md",
-          "title": "Formal Address Reference Model"
+          "title": "Formal Address Reference Model",
+          "description": "Defines typed referents, observations, evidence, partial morphisms, and candidate sets.",
+          "modelFile": "chapters/address-morphism-theory/models/02-formal-address-reference-model.model.py",
+          "modelTests": "chapters/address-morphism-theory/models/02-formal-address-reference-model.model-tests.json"
         },
         {
           "order": 3,
           "file": "chapters/address-morphism-theory/03-evidence-gates-and-abstention.md",
-          "title": "Evidence Gates and Abstention"
+          "title": "Evidence Gates and Abstention",
+          "description": "Defines gate predicates, evidence thresholds, rejection, ambiguity, and unresolved states.",
+          "modelFile": "chapters/address-morphism-theory/models/03-evidence-gates-and-abstention.model.py",
+          "modelTests": "chapters/address-morphism-theory/models/03-evidence-gates-and-abstention.model-tests.json"
         },
         {
           "order": 4,
           "file": "chapters/address-morphism-theory/04-morphisms-lineage-and-reconstruction.md",
-          "title": "Morphisms, Lineage, and Reconstruction"
+          "title": "Morphisms, Lineage, and Reconstruction",
+          "description": "Defines breadcrumb restoration, address lineage, split/merge relations, and reconstruction safety.",
+          "modelFile": "chapters/address-morphism-theory/models/04-morphisms-lineage-and-reconstruction.model.py",
+          "modelTests": "chapters/address-morphism-theory/models/04-morphisms-lineage-and-reconstruction.model-tests.json"
         },
         {
           "order": 5,
           "file": "chapters/address-morphism-theory/05-protocol-boundaries-and-applications.md",
-          "title": "Protocol Boundaries and Applications"
+          "title": "Protocol Boundaries and Applications",
+          "description": "Separates theory from protocol, SDK, resolver, QR, POS, hotel, and delivery applications.",
+          "modelFile": "chapters/address-morphism-theory/models/05-protocol-boundaries-and-applications.model.py",
+          "modelTests": "chapters/address-morphism-theory/models/05-protocol-boundaries-and-applications.model-tests.json"
         },
         {
           "order": 6,
           "file": "chapters/address-morphism-theory/06-validation-and-open-claims.md",
-          "title": "Validation and Open Claims"
+          "title": "Validation and Open Claims",
+          "description": "Classifies formal claims, executable claims, empirical targets, and remaining unverified items.",
+          "modelFile": "chapters/address-morphism-theory/models/06-validation-and-open-claims.model.py",
+          "modelTests": "chapters/address-morphism-theory/models/06-validation-and-open-claims.model-tests.json"
         }
       ]
     },
@@ -47,31 +68,47 @@
       "kind": "privacy-proof-theory",
       "status": "active",
       "sourcePaper": "papers/address-morphism-theory-ii-zero-knowledge-address-predicates.md",
+      "tocFile": "chapters/zero-knowledge-address-predicates/toc.md",
       "chapters": [
         {
           "order": 1,
           "file": "chapters/zero-knowledge-address-predicates/01-privacy-goals-and-non-goals.md",
-          "title": "Privacy Goals and Non-Goals"
+          "title": "Privacy Goals and Non-Goals",
+          "description": "Defines what can be safely proven and what a ZK-ready model does not solve.",
+          "modelFile": "chapters/zero-knowledge-address-predicates/models/01-privacy-goals-and-non-goals.model.py",
+          "modelTests": "chapters/zero-knowledge-address-predicates/models/01-privacy-goals-and-non-goals.model-tests.json"
         },
         {
           "order": 2,
           "file": "chapters/zero-knowledge-address-predicates/02-commitments-nullifiers-and-public-signals.md",
-          "title": "Commitments, Nullifiers, and Public Signals"
+          "title": "Commitments, Nullifiers, and Public Signals",
+          "description": "Separates commitments, nullifiers, public signals, roots, scopes, and verifier policy.",
+          "modelFile": "chapters/zero-knowledge-address-predicates/models/02-commitments-nullifiers-and-public-signals.model.py",
+          "modelTests": "chapters/zero-knowledge-address-predicates/models/02-commitments-nullifiers-and-public-signals.model-tests.json"
         },
         {
           "order": 3,
           "file": "chapters/zero-knowledge-address-predicates/03-predicate-taxonomy.md",
-          "title": "Predicate Taxonomy"
+          "title": "Predicate Taxonomy",
+          "description": "Defines region, quality, freshness, consent, revocation, and rate-limit predicates.",
+          "modelFile": "chapters/zero-knowledge-address-predicates/models/03-predicate-taxonomy.model.py",
+          "modelTests": "chapters/zero-knowledge-address-predicates/models/03-predicate-taxonomy.model-tests.json"
         },
         {
           "order": 4,
           "file": "chapters/zero-knowledge-address-predicates/04-proof-bundle-lifecycle.md",
-          "title": "Proof Bundle Lifecycle"
+          "title": "Proof Bundle Lifecycle",
+          "description": "Models proof issuance, use, replay prevention, expiry, revocation, and audit boundaries.",
+          "modelFile": "chapters/zero-knowledge-address-predicates/models/04-proof-bundle-lifecycle.model.py",
+          "modelTests": "chapters/zero-knowledge-address-predicates/models/04-proof-bundle-lifecycle.model-tests.json"
         },
         {
           "order": 5,
           "file": "chapters/zero-knowledge-address-predicates/05-applications-and-safety-boundaries.md",
-          "title": "Applications and Safety Boundaries"
+          "title": "Applications and Safety Boundaries",
+          "description": "Connects proof-only sharing to wallet, QR, POS, hotel, field, locker, and drone workflows.",
+          "modelFile": "chapters/zero-knowledge-address-predicates/models/05-applications-and-safety-boundaries.model.py",
+          "modelTests": "chapters/zero-knowledge-address-predicates/models/05-applications-and-safety-boundaries.model-tests.json"
         }
       ]
     },
@@ -81,21 +118,65 @@
       "kind": "translation-theory",
       "status": "active",
       "sourcePaper": "papers/address-translation-theory-ja-v1.md",
+      "tocFile": "chapters/address-translation-theory/toc.md",
       "chapters": [
         {
           "order": 1,
           "file": "chapters/address-translation-theory/01-translation-is-restructuring.md",
-          "title": "Translation Is Restructuring"
+          "title": "Translation Is Restructuring",
+          "description": "Shows why address translation must preserve identity and structure before language.",
+          "modelFile": "chapters/address-translation-theory/models/01-translation-is-restructuring.model.py",
+          "modelTests": "chapters/address-translation-theory/models/01-translation-is-restructuring.model-tests.json"
         },
         {
           "order": 2,
           "file": "chapters/address-translation-theory/02-three-layer-model.md",
-          "title": "Three-Layer Model"
+          "title": "Three-Layer Model",
+          "description": "Separates semantic, institutional, and output layers.",
+          "modelFile": "chapters/address-translation-theory/models/02-three-layer-model.model.py",
+          "modelTests": "chapters/address-translation-theory/models/02-three-layer-model.model-tests.json"
         },
         {
           "order": 3,
           "file": "chapters/address-translation-theory/03-purpose-specific-outputs.md",
-          "title": "Purpose-Specific Outputs"
+          "title": "Purpose-Specific Outputs",
+          "description": "Defines shipping, identity, map search, EC form, and proof-oriented outputs.",
+          "modelFile": "chapters/address-translation-theory/models/03-purpose-specific-outputs.model.py",
+          "modelTests": "chapters/address-translation-theory/models/03-purpose-specific-outputs.model-tests.json"
+        }
+      ]
+    },
+    {
+      "id": "address-machine-translation-theory",
+      "title": "Address Machine Translation Theory",
+      "kind": "machine-translation-theory",
+      "status": "draft",
+      "sourcePaper": "papers/address-machine-translation-theory-ja-v1.md",
+      "tocFile": "chapters/address-machine-translation-theory/toc.md",
+      "chapters": [
+        {
+          "order": 1,
+          "file": "chapters/address-machine-translation-theory/01-guarded-address-mt.md",
+          "title": "Guarded Address Machine Translation",
+          "description": "Defines why address MT must be guarded by structure, evidence, and non-translation rules.",
+          "modelFile": "chapters/address-machine-translation-theory/models/01-guarded-address-mt.model.py",
+          "modelTests": "chapters/address-machine-translation-theory/models/01-guarded-address-mt.model-tests.json"
+        },
+        {
+          "order": 2,
+          "file": "chapters/address-machine-translation-theory/02-rule-ai-geo-hybrid-engine.md",
+          "title": "Rule, AI, and Geo Hybrid Engine",
+          "description": "Defines the hybrid pipeline: parser, normalizer, transliterator, geo verifier, and renderer.",
+          "modelFile": "chapters/address-machine-translation-theory/models/02-rule-ai-geo-hybrid-engine.model.py",
+          "modelTests": "chapters/address-machine-translation-theory/models/02-rule-ai-geo-hybrid-engine.model-tests.json"
+        },
+        {
+          "order": 3,
+          "file": "chapters/address-machine-translation-theory/03-quality-feedback-and-abstention.md",
+          "title": "Quality Feedback and Abstention",
+          "description": "Defines confidence, warnings, unverified fields, delivery risk, and manual review.",
+          "modelFile": "chapters/address-machine-translation-theory/models/03-quality-feedback-and-abstention.model.py",
+          "modelTests": "chapters/address-machine-translation-theory/models/03-quality-feedback-and-abstention.model-tests.json"
         }
       ]
     },
@@ -105,21 +186,31 @@
       "kind": "postal-zone-theory",
       "status": "active",
       "sourcePaper": "verification/universal-postal-code-adoption-theory.md",
+      "tocFile": "chapters/postal-zone-generation-theory/toc.md",
       "chapters": [
         {
           "order": 1,
           "file": "chapters/postal-zone-generation-theory/01-postal-equivalence.md",
-          "title": "Postal Equivalence"
+          "title": "Postal Equivalence",
+          "description": "Defines when an AGID zone can act as a postal-code-equivalent region.",
+          "modelFile": "chapters/postal-zone-generation-theory/models/01-postal-equivalence.model.py",
+          "modelTests": "chapters/postal-zone-generation-theory/models/01-postal-equivalence.model-tests.json"
         },
         {
           "order": 2,
           "file": "chapters/postal-zone-generation-theory/02-zone-design-objectives.md",
-          "title": "Zone Design Objectives"
+          "title": "Zone Design Objectives",
+          "description": "Defines balance, contiguity, delivery load, area, population, and route cost objectives.",
+          "modelFile": "chapters/postal-zone-generation-theory/models/02-zone-design-objectives.model.py",
+          "modelTests": "chapters/postal-zone-generation-theory/models/02-zone-design-objectives.model-tests.json"
         },
         {
           "order": 3,
           "file": "chapters/postal-zone-generation-theory/03-no-postcode-and-weak-postcode-regions.md",
-          "title": "No-Postcode and Weak-Postcode Regions"
+          "title": "No-Postcode and Weak-Postcode Regions",
+          "description": "Defines behavior for weak postal APIs and AGID-primary no-postcode regions.",
+          "modelFile": "chapters/postal-zone-generation-theory/models/03-no-postcode-and-weak-postcode-regions.model.py",
+          "modelTests": "chapters/postal-zone-generation-theory/models/03-no-postcode-and-weak-postcode-regions.model-tests.json"
         }
       ]
     }

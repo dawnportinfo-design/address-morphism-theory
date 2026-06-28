@@ -17,3 +17,10 @@ not share the same field semantics.
 
 Format the result for the purpose. A shipping label, identity form, and map
 query may each require a different ordering and disclosure level.
+
+## Executable Model
+
+- Model: [02-three-layer-model.model.py](models/02-three-layer-model.model.py)
+- Fixture: [02-three-layer-model.model-tests.json](models/02-three-layer-model.model-tests.json)
+
+The model is a local mathematical reference for this chapter's claims. It is not a production resolver, postal engine, or audited cryptographic circuit.

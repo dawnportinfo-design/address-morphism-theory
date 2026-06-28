@@ -26,3 +26,10 @@ The project must not claim:
 - audited production zero-knowledge security
 
 These are research and verification targets, not completed claims.
+
+## Executable Model
+
+- Model: [06-validation-and-open-claims.model.py](models/06-validation-and-open-claims.model.py)
+- Fixture: [06-validation-and-open-claims.model-tests.json](models/06-validation-and-open-claims.model-tests.json)
+
+The model is a local mathematical reference for this chapter's claims. It is not a production resolver, postal engine, or audited cryptographic circuit.

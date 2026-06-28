@@ -30,3 +30,10 @@ where `p` is purpose and `e` is an evidence state.
 
 AGID can be an emitted identifier when the morphism is final. When it is not
 final, the compatible output is a structured non-final state, not a guessed AGID.
+
+## Executable Model
+
+- Model: [02-formal-address-reference-model.model.py](models/02-formal-address-reference-model.model.py)
+- Fixture: [02-formal-address-reference-model.model-tests.json](models/02-formal-address-reference-model.model-tests.json)
+
+The model is a local mathematical reference for this chapter's claims. It is not a production resolver, postal engine, or audited cryptographic circuit.

@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "address-morphism-theory",
+  "chapter": "06-validation-and-open-claims.md",
+  "title": "Validation and Open Claims",
+  "model": "chapters/address-morphism-theory/models/06-validation-and-open-claims.model.py",
+  "tests": [
+    {
+      "id": "06-validation-and-open-claims-runs",
+      "command": "python chapters/address-morphism-theory/models/06-validation-and-open-claims.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "06-validation-and-open-claims-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

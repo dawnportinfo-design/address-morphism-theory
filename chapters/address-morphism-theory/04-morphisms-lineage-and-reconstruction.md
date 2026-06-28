@@ -30,3 +30,10 @@ However, breadcrumbs are not sufficient by themselves. They need:
 
 The best AGID-compatible model is therefore a versioned address graph with a
 breadcrumb projection, not a breadcrumb-only tree.
+
+## Executable Model
+
+- Model: [04-morphisms-lineage-and-reconstruction.model.py](models/04-morphisms-lineage-and-reconstruction.model.py)
+- Fixture: [04-morphisms-lineage-and-reconstruction.model-tests.json](models/04-morphisms-lineage-and-reconstruction.model-tests.json)
+
+The model is a local mathematical reference for this chapter's claims. It is not a production resolver, postal engine, or audited cryptographic circuit.

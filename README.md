@@ -53,14 +53,19 @@ states are part of the theory, not implementation failures.
 
 ## Chapterized Reading Paths
 
+- Cross-series table of contents: `chapters/table-of-contents.md`
 - Core AMT: `chapters/address-morphism-theory/`
 - Zero-knowledge address predicates: `chapters/zero-knowledge-address-predicates/`
 - ZK material map: `zk/README.md`
 - Address translation theory: `chapters/address-translation-theory/`
+- Address machine translation theory: `chapters/address-machine-translation-theory/`
 - Postal-zone generation theory: `chapters/postal-zone-generation-theory/`
 
 The chapter index is machine-checked by `npm run verify:chapters`.
 The ZK material map is machine-checked by `npm run verify:zk-materials`.
+Each chapter now has a paired executable mathematical model under the chapter
+series' `models/` directory, plus a `*.model-tests.json` fixture. These models
+are small local references for claims, not production systems.
 
 ## Primary Manuscripts
 

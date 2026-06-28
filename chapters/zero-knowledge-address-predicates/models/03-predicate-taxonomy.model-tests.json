@@ -1,0 +1,18 @@
+{
+  "schema": "chapter-model-tests-v1",
+  "series": "zero-knowledge-address-predicates",
+  "chapter": "03-predicate-taxonomy.md",
+  "title": "Predicate Taxonomy",
+  "model": "chapters/zero-knowledge-address-predicates/models/03-predicate-taxonomy.model.py",
+  "tests": [
+    {
+      "id": "03-predicate-taxonomy-runs",
+      "command": "python chapters/zero-knowledge-address-predicates/models/03-predicate-taxonomy.model.py",
+      "expected": "exit-0"
+    },
+    {
+      "id": "03-predicate-taxonomy-no-personal-address-material",
+      "expected": "no raw address, recipient, private key, or witness fixtures"
+    }
+  ]
+}

@@ -18,3 +18,10 @@ The first useful predicate families are:
    - prove membership in a postal or postal-equivalent zone.
 
 Each predicate needs a public-signal policy and a failure state.
+
+## Executable Model
+
+- Model: [03-predicate-taxonomy.model.py](models/03-predicate-taxonomy.model.py)
+- Fixture: [03-predicate-taxonomy.model-tests.json](models/03-predicate-taxonomy.model-tests.json)
+
+The model is a local mathematical reference for this chapter's claims. It is not a production resolver, postal engine, or audited cryptographic circuit.

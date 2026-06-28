@@ -30,3 +30,10 @@ AMT can inform:
 
 Each application must define its own threat model, verifier policy, and failure
 behavior.
+
+## Executable Model
+
+- Model: [05-protocol-boundaries-and-applications.model.py](models/05-protocol-boundaries-and-applications.model.py)
+- Fixture: [05-protocol-boundaries-and-applications.model-tests.json](models/05-protocol-boundaries-and-applications.model-tests.json)
+
+The model is a local mathematical reference for this chapter's claims. It is not a production resolver, postal engine, or audited cryptographic circuit.
