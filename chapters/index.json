@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2026-06-29",
+  "repository": "address-morphism-theory",
+  "series": [
+    {
+      "id": "address-morphism-theory",
+      "title": "Address Morphism Theory",
+      "kind": "core-theory",
+      "status": "active",
+      "sourcePaper": "papers/address-morphism-theory-full-paper-en-v3.md",
+      "chapters": [
+        {
+          "order": 1,
+          "file": "chapters/address-morphism-theory/01-problem-and-scope.md",
+          "title": "Problem and Scope"
+        },
+        {
+          "order": 2,
+          "file": "chapters/address-morphism-theory/02-formal-address-reference-model.md",
+          "title": "Formal Address Reference Model"
+        },
+        {
+          "order": 3,
+          "file": "chapters/address-morphism-theory/03-evidence-gates-and-abstention.md",
+          "title": "Evidence Gates and Abstention"
+        },
+        {
+          "order": 4,
+          "file": "chapters/address-morphism-theory/04-morphisms-lineage-and-reconstruction.md",
+          "title": "Morphisms, Lineage, and Reconstruction"
+        },
+        {
+          "order": 5,
+          "file": "chapters/address-morphism-theory/05-protocol-boundaries-and-applications.md",
+          "title": "Protocol Boundaries and Applications"
+        },
+        {
+          "order": 6,
+          "file": "chapters/address-morphism-theory/06-validation-and-open-claims.md",
+          "title": "Validation and Open Claims"
+        }
+      ]
+    },
+    {
+      "id": "zero-knowledge-address-predicates",
+      "title": "Zero-Knowledge Address Predicates",
+      "kind": "privacy-proof-theory",
+      "status": "active",
+      "sourcePaper": "papers/address-morphism-theory-ii-zero-knowledge-address-predicates.md",
+      "chapters": [
+        {
+          "order": 1,
+          "file": "chapters/zero-knowledge-address-predicates/01-privacy-goals-and-non-goals.md",
+          "title": "Privacy Goals and Non-Goals"
+        },
+        {
+          "order": 2,
+          "file": "chapters/zero-knowledge-address-predicates/02-commitments-nullifiers-and-public-signals.md",
+          "title": "Commitments, Nullifiers, and Public Signals"
+        },
+        {
+          "order": 3,
+          "file": "chapters/zero-knowledge-address-predicates/03-predicate-taxonomy.md",
+          "title": "Predicate Taxonomy"
+        },
+        {
+          "order": 4,
+          "file": "chapters/zero-knowledge-address-predicates/04-proof-bundle-lifecycle.md",
+          "title": "Proof Bundle Lifecycle"
+        },
+        {
+          "order": 5,
+          "file": "chapters/zero-knowledge-address-predicates/05-applications-and-safety-boundaries.md",
+          "title": "Applications and Safety Boundaries"
+        }
+      ]
+    },
+    {
+      "id": "address-translation-theory",
+      "title": "Address Translation Theory",
+      "kind": "translation-theory",
+      "status": "active",
+      "sourcePaper": "papers/address-translation-theory-ja-v1.md",
+      "chapters": [
+        {
+          "order": 1,
+          "file": "chapters/address-translation-theory/01-translation-is-restructuring.md",
+          "title": "Translation Is Restructuring"
+        },
+        {
+          "order": 2,
+          "file": "chapters/address-translation-theory/02-three-layer-model.md",
+          "title": "Three-Layer Model"
+        },
+        {
+          "order": 3,
+          "file": "chapters/address-translation-theory/03-purpose-specific-outputs.md",
+          "title": "Purpose-Specific Outputs"
+        }
+      ]
+    },
+    {
+      "id": "postal-zone-generation-theory",
+      "title": "Postal Zone Generation Theory",
+      "kind": "postal-zone-theory",
+      "status": "active",
+      "sourcePaper": "verification/universal-postal-code-adoption-theory.md",
+      "chapters": [
+        {
+          "order": 1,
+          "file": "chapters/postal-zone-generation-theory/01-postal-equivalence.md",
+          "title": "Postal Equivalence"
+        },
+        {
+          "order": 2,
+          "file": "chapters/postal-zone-generation-theory/02-zone-design-objectives.md",
+          "title": "Zone Design Objectives"
+        },
+        {
+          "order": 3,
+          "file": "chapters/postal-zone-generation-theory/03-no-postcode-and-weak-postcode-regions.md",
+          "title": "No-Postcode and Weak-Postcode Regions"
+        }
+      ]
+    }
+  ]
+}

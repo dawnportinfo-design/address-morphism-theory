@@ -20,10 +20,13 @@ states are part of the theory, not implementation failures.
 
 ## Reader Paths
 
-- **Researcher:** start with `papers/address-morphism-theory-formal-core.tex`,
-  then the theorem inventory in `papers/address-morphism-theory-full-paper-en-v3.md`.
+- **Researcher:** start with `chapters/README.md`, then read the chapterized
+  core theory under `chapters/address-morphism-theory/`. Use
+  `papers/address-morphism-theory-formal-core.tex` as the compact formal source.
 - **Developer:** run `npm run verify:model` to see the executable abstention
   model, then inspect `verification/address-morphism-executable-expectations.md`.
+  For privacy predicates, run `npm run verify:predicate-dsl` and inspect
+  `src/address_morphism/predicate_dsl.py`.
 - **Standards / public-sector reader:** read the scope and non-goals in the
   formal core, then `verification/repository-content-gap-audit.md` for the
   trust and artifact roadmap.
@@ -35,11 +38,22 @@ states are part of the theory, not implementation failures.
 
 ## Repository Layout
 
+- `chapters/` - chapterized reader paths split by theory type and paper series.
 - `papers/` - active English and Japanese manuscripts.
 - `notes/` - chapter drafts, outlines, and research resumes.
 - `verification/` - claim maps, expectation tests, audits, and verification boundaries.
+- `src/` - small dependency-free executable reference models.
 - `scripts/` - local manuscript assembly and PDF generation tools.
 - `output/pdf/` - generated PDFs and HTML exports. This directory is ignored by Git.
+
+## Chapterized Reading Paths
+
+- Core AMT: `chapters/address-morphism-theory/`
+- Zero-knowledge address predicates: `chapters/zero-knowledge-address-predicates/`
+- Address translation theory: `chapters/address-translation-theory/`
+- Postal-zone generation theory: `chapters/postal-zone-generation-theory/`
+
+The chapter index is machine-checked by `npm run verify:chapters`.
 
 ## Primary Manuscripts
 
@@ -64,6 +78,8 @@ states are part of the theory, not implementation failures.
 
 ```powershell
 npm run verify:model
+npm run verify:chapters
+npm run verify:predicate-dsl
 npm run build:full-pdfs
 npm run build:bilingual
 npm run verify
@@ -80,6 +96,9 @@ or proof material that should never be published.
 collision, missing candidates, gate rejection, no-postcode AGID-first handling,
 relational lineage, context-relative optimality, entropy reduction, abstention
 monotonicity, and predicate anonymity-set checks.
+`npm run verify:predicate-dsl` runs a small zero-knowledge-ready predicate model
+that evaluates region, quality, freshness, consent, revocation, nullifier, and
+anonymity-set rules without exposing raw address material in public signals.
 `npm run verify:s-priority-decomposition` verifies that the highest-risk
 unverified claims are decomposed by region, use case, data source, metrics, and
 failure behavior, and that failure states block precise verified issuance.
