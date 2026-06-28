@@ -8,6 +8,31 @@ entities. It treats ambiguity, incomplete candidates, lineage, unresolved
 states, persistent identifiers, and privacy-preserving predicates as first-class
 research objects.
 
+## Why This Is Different
+
+AMT does not treat an address as only a string, coordinate, postal-code record,
+or formatted label. It treats an address as a context-indexed, evidence-bound
+partial morphism from surface expressions to typed referents.
+
+The core claim is deliberately conservative: a responsible address resolver must
+know when not to emit a precise identifier. Ambiguous, unresolved, and rejected
+states are part of the theory, not implementation failures.
+
+## Reader Paths
+
+- **Researcher:** start with `papers/address-morphism-theory-formal-core.tex`,
+  then the theorem inventory in `papers/address-morphism-theory-full-paper-en-v3.md`.
+- **Developer:** run `npm run verify:model` to see the executable abstention
+  model, then inspect `verification/address-morphism-executable-expectations.md`.
+- **Standards / public-sector reader:** read the scope and non-goals in the
+  formal core, then `verification/repository-content-gap-audit.md` for the
+  trust and artifact roadmap.
+- **Reviewer:** read `verification/main5-formal-additions.md` to see which
+  manuscript ideas were promoted into definitions, theorems, and tests.
+- **Risk reviewer:** run `npm run verify:s-priority-decomposition` and read
+  `verification/s-priority-decomposition-verification.md` to see how the top
+  unverified claims are split by region, use case, source, and failure mode.
+
 ## Repository Layout
 
 - `papers/` - active English and Japanese manuscripts.
@@ -18,6 +43,7 @@ research objects.
 
 ## Primary Manuscripts
 
+- `papers/address-morphism-theory-formal-core.tex`
 - `papers/address-morphism-theory-full-paper-en-v3.md`
 - `papers/address-morphism-theory-ja-v1-master.md`
 - `papers/address-morphism-theory-protocol-expansion-ja-v1.md`
@@ -37,6 +63,7 @@ research objects.
 ## Build
 
 ```powershell
+npm run verify:model
 npm run build:full-pdfs
 npm run build:bilingual
 npm run verify
@@ -49,8 +76,31 @@ Generated PDF and HTML files are written to `output/pdf/`, which is ignored by G
 PDFs have expected page counts, sizes, and extractable text. It also runs a
 local publication-safety scan for secret keys, token-like strings, and witness
 or proof material that should never be published.
+`npm run verify:model` runs a small executable AMT model covering normalization
+collision, missing candidates, gate rejection, no-postcode AGID-first handling,
+relational lineage, context-relative optimality, entropy reduction, abstention
+monotonicity, and predicate anonymity-set checks.
+`npm run verify:s-priority-decomposition` verifies that the highest-risk
+unverified claims are decomposed by region, use case, data source, metrics, and
+failure behavior, and that failure states block precise verified issuance.
 PDF verification writes `output/pdf/address-morphism-theory-pdf-manifest.json`
 with page counts, byte sizes, and SHA-256 hashes for generated PDFs.
+
+## Trust Model
+
+Claims in this repository should be classified as one of:
+
+- `formal`
+- `executable-model`
+- `empirical-target`
+- `implementation-test`
+- `speculative`
+- `out-of-scope`
+
+The project should not present empirical coverage, production AGID behavior,
+or zero-knowledge proof security as solved by the AMT paper alone. The formal
+paper defines the address reference model; companion work must validate global
+data coverage, operational security, and cryptographic proof systems.
 
 ## Boundary With AGID
 

@@ -6,6 +6,9 @@ const ROOT = path.resolve(__dirname, "..");
 
 const STEPS = [
   ["node", ["scripts/verify-repository-layout.cjs"]],
+  ["python", ["scripts/verify_amt_executable_model.py"]],
+  ["python", ["scripts/verify_s_priority_plan.py"]],
+  ["python", ["scripts/verify_s_priority_decomposition.py"]],
   ["python", ["scripts/verify_publication_safety.py", "--self-test"]],
   ["python", ["scripts/verify_publication_safety.py"]],
   ["python", ["scripts/verify_pdfs.py"]],

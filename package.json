@@ -12,6 +12,9 @@
     "assemble:ja": "powershell -ExecutionPolicy Bypass -File scripts/assemble_address_morphism_ja_v1.ps1",
     "verify": "node scripts/verify-all.cjs",
     "verify:layout": "node scripts/verify-repository-layout.cjs",
+    "verify:model": "python scripts/verify_amt_executable_model.py",
+    "verify:s-priority": "python scripts/verify_s_priority_plan.py",
+    "verify:s-priority-decomposition": "python scripts/verify_s_priority_decomposition.py",
     "verify:publication-safety": "python scripts/verify_publication_safety.py",
     "verify:publication-safety:self-test": "python scripts/verify_publication_safety.py --self-test",
     "verify:pdfs": "python scripts/verify_pdfs.py"

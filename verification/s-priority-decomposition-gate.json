@@ -1,0 +1,140 @@
+{
+  "schema": "amt-s-priority-decomposition-gate-v1",
+  "updatedAt": "2026-06-29",
+  "purpose": "Decompose S-priority unverified AMT claims by region, use case, data source, and failure behavior so the repository can verify claim boundaries without pretending that worldwide empirical completeness is already proven.",
+  "items": [
+    {
+      "id": "candidate-generation-world-coverage",
+      "claim": "Worldwide candidate generation completeness",
+      "regions": ["dense formal postal regions", "weak postal rural regions", "no-normal-postcode urban regions", "island and coastal regions", "disputed or cross-border policy regions"],
+      "useCases": ["international delivery", "e-commerce checkout", "field handoff", "hotel or POS intake"],
+      "dataSources": [
+        { "name": "official postal and administrative data", "approval": "local-static" },
+        { "name": "open geo data", "approval": "public-oss" },
+        { "name": "redacted feedback envelopes", "approval": "local-fixture" }
+      ],
+      "metrics": ["recall@k", "candidate-miss-rate", "unresolved-rate", "source-coverage-rate"],
+      "failureBehaviors": [
+        { "trigger": "target not in candidate set", "action": "unresolved", "blocksVerifiedIssuance": true },
+        { "trigger": "near-tied candidates", "action": "manual-review", "blocksVerifiedIssuance": true },
+        { "trigger": "source stale or unlicensed", "action": "additional-evidence-required", "blocksVerifiedIssuance": true }
+      ],
+      "safeWording": "Candidate generation is source-bound and region-measured; insufficient coverage returns unresolved or additional evidence required.",
+      "forbiddenClaim": "AMT can find every addressable object worldwide."
+    },
+    {
+      "id": "multilingual-search-recall",
+      "claim": "Multilingual search recall improvement",
+      "regions": ["multi-script regions", "Latin transliteration regions", "historical-name regions", "cross-border naming regions"],
+      "useCases": ["map search", "international delivery", "e-commerce checkout", "address translation"],
+      "dataSources": [
+        { "name": "language alias packs", "approval": "local-static" },
+        { "name": "official and open gazetteers", "approval": "source-review" },
+        { "name": "redacted query fixtures", "approval": "local-fixture" }
+      ],
+      "metrics": ["recall@k", "false-merge-rate", "alias-collision-rate", "script-coverage-rate"],
+      "failureBehaviors": [
+        { "trigger": "alias collision", "action": "candidate-only", "blocksVerifiedIssuance": true },
+        { "trigger": "low language confidence", "action": "manual-review", "blocksVerifiedIssuance": true },
+        { "trigger": "missing source alias", "action": "additional-evidence-required", "blocksVerifiedIssuance": true }
+      ],
+      "safeWording": "Multilingual expansion is a recall layer; identity decisions require secondary structure, source, and history gates.",
+      "forbiddenClaim": "Translation proves two address strings are the same address."
+    },
+    {
+      "id": "natural-cultural-feature-world-coverage",
+      "claim": "Worldwide natural and cultural feature addressability",
+      "regions": ["islands and coasts", "deserts and mountains", "polar and glacier regions", "heritage and cultural regions"],
+      "useCases": ["non-postal place reference", "marine handoff", "humanitarian or disaster response", "research station approach"],
+      "dataSources": [
+        { "name": "open geo feature data", "approval": "public-oss" },
+        { "name": "heritage or scientific gazetteers", "approval": "external-approval-required" },
+        { "name": "redacted field reports", "approval": "local-fixture" }
+      ],
+      "metrics": ["feature-type-coverage-rate", "geometry-quality-rate", "name-alias-coverage-rate", "unresolved-rate"],
+      "failureBehaviors": [
+        { "trigger": "feature missing from declared source", "action": "unresolved", "blocksVerifiedIssuance": true },
+        { "trigger": "unstable or seasonal boundary", "action": "additional-evidence-required", "blocksVerifiedIssuance": true },
+        { "trigger": "ambiguous representative point", "action": "manual-review", "blocksVerifiedIssuance": true }
+      ],
+      "safeWording": "Natural and cultural place support is feature-type and source-bound; missing or unstable sources stay unresolved.",
+      "forbiddenClaim": "AMT recognizes every natural and cultural name worldwide."
+    },
+    {
+      "id": "strict-gis-validation",
+      "claim": "Strict GIS validation",
+      "regions": ["dense city packs", "small island packs", "mountain or desert packs", "ocean and polar packs"],
+      "useCases": ["postal zone design", "delivery zone validation", "AGID grid validation", "boundary policy overlays"],
+      "dataSources": [
+        { "name": "declared geometry packs", "approval": "local-static" },
+        { "name": "open administrative boundaries", "approval": "public-oss" },
+        { "name": "source license registry", "approval": "local-static" }
+      ],
+      "metrics": ["hard-error-count", "strict-warning-count", "geometry-validity-rate", "source-id-coverage-rate"],
+      "failureBehaviors": [
+        { "trigger": "hard GIS error", "action": "block-verified-issuance", "blocksVerifiedIssuance": true },
+        { "trigger": "strict warning remains", "action": "manual-review", "blocksVerifiedIssuance": true },
+        { "trigger": "source license missing", "action": "additional-evidence-required", "blocksVerifiedIssuance": true }
+      ],
+      "safeWording": "Machine-readable local validation and strict warning-free global validation are separate claims.",
+      "forbiddenClaim": "GIS validation proves worldwide geography is correct."
+    },
+    {
+      "id": "commercial-address-api-comparison",
+      "claim": "Comparison against commercial address validation APIs",
+      "regions": ["strong postal countries", "weak postal countries", "no-normal-postcode regions", "islands and cross-border regions"],
+      "useCases": ["address validation", "KYC form split", "international shipping", "e-commerce checkout"],
+      "dataSources": [
+        { "name": "rights-cleared benchmark inputs", "approval": "terms-review-required" },
+        { "name": "commercial validator APIs", "approval": "external-approval-required" },
+        { "name": "aggregate metrics only", "approval": "publication-review" }
+      ],
+      "metrics": ["validity-agreement", "correction-accuracy", "candidate-recall", "false-positive-rate", "latency", "cost-per-lookup"],
+      "failureBehaviors": [
+        { "trigger": "terms or network approval missing", "action": "external-approval-required", "blocksVerifiedIssuance": true },
+        { "trigger": "provider response cannot be published", "action": "aggregate-only", "blocksVerifiedIssuance": true },
+        { "trigger": "input rights not cleared", "action": "benchmark-skipped", "blocksVerifiedIssuance": true }
+      ],
+      "safeWording": "AMT should be compared by evaluation condition after API terms, credentials, and benchmark rights are cleared.",
+      "forbiddenClaim": "AMT beats all commercial address APIs."
+    },
+    {
+      "id": "zk-circuit-security",
+      "claim": "Real zero-knowledge circuit safety",
+      "regions": ["small anonymity set regions", "dense formal regions", "cross-border predicates", "single-building risk zones"],
+      "useCases": ["region membership proof", "delivery eligibility proof", "freshness proof", "anonymous rate limit"],
+      "dataSources": [
+        { "name": "toy commitments and public inputs", "approval": "local-fixture" },
+        { "name": "circuit implementation", "approval": "implementation-required" },
+        { "name": "cryptographic audit", "approval": "external-approval-required" }
+      ],
+      "metrics": ["constraint-test-pass-rate", "public-input-minimization", "nullifier-domain-separation", "witness-leakage-findings", "audit-status"],
+      "failureBehaviors": [
+        { "trigger": "no audited circuit", "action": "zk-ready-only", "blocksVerifiedIssuance": true },
+        { "trigger": "anonymity set too small", "action": "manual-review", "blocksVerifiedIssuance": true },
+        { "trigger": "witness leakage risk", "action": "block-verified-issuance", "blocksVerifiedIssuance": true }
+      ],
+      "safeWording": "AMT defines address predicates and proof-ready envelopes; audited circuits are companion work.",
+      "forbiddenClaim": "AMT already provides complete zero-knowledge address proofs."
+    },
+    {
+      "id": "agid-aoid-production-security",
+      "claim": "AGID/AOID production security",
+      "regions": ["all regions", "offline regions", "connector-heavy regions", "high-risk privacy regions"],
+      "useCases": ["address registration", "QR sharing", "POS handoff", "hotel connector", "delivery field handoff"],
+      "dataSources": [
+        { "name": "local mandatory release gates", "approval": "local-static" },
+        { "name": "redacted audit logs", "approval": "local-fixture" },
+        { "name": "external security and privacy audit", "approval": "external-approval-required" }
+      ],
+      "metrics": ["threat-model-coverage", "release-gate-pass-rate", "replay-test-pass-rate", "revocation-test-pass-rate", "external-audit-status"],
+      "failureBehaviors": [
+        { "trigger": "private material risk", "action": "block-verified-issuance", "blocksVerifiedIssuance": true },
+        { "trigger": "audit incomplete", "action": "external-approval-required", "blocksVerifiedIssuance": true },
+        { "trigger": "unsafe retry or raw connector error", "action": "block-verified-issuance", "blocksVerifiedIssuance": true }
+      ],
+      "safeWording": "AMT defines semantics; implementation security requires local gates and external review.",
+      "forbiddenClaim": "AGID/AOID are production secure because AMT is defined."
+    }
+  ]
+}

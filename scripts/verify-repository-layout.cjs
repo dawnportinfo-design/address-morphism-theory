@@ -8,10 +8,20 @@ const requiredFiles = [
   'LICENSE',
   'package.json',
   'REPOSITORY_SPLIT.md',
+  'papers/address-morphism-theory-formal-core.tex',
   'papers/address-morphism-theory-full-paper-en-v3.md',
   'papers/address-morphism-theory-ja-v1-master.md',
   'papers/address-morphism-theory-ii-zero-knowledge-address-predicates.md',
+  'verification/repository-content-gap-audit.md',
+  'verification/main5-formal-additions.md',
   'verification/address-morphism-executable-expectations.md',
+  'verification/s-priority-verification-feasibility.md',
+  'verification/s-priority-verification-plan.json',
+  'verification/s-priority-decomposition-gate.json',
+  'verification/s-priority-decomposition-verification.md',
+  'scripts/verify_amt_executable_model.py',
+  'scripts/verify_s_priority_plan.py',
+  'scripts/verify_s_priority_decomposition.py',
   'scripts/build_address_morphism_full_pdfs.cjs',
 ];
 
@@ -43,7 +53,7 @@ function walk(directory) {
     if (entry.isDirectory()) {
       if (['.git', 'node_modules', 'output'].includes(entry.name)) continue;
       walk(fullPath);
-    } else if (entry.isFile() && /\.(md|js|cjs|json|py|ps1)$/i.test(entry.name)) {
+    } else if (entry.isFile() && /\.(md|tex|js|cjs|json|py|ps1)$/i.test(entry.name)) {
       const text = fs.readFileSync(fullPath, 'utf8');
       for (const pattern of forbiddenPatterns) {
         if (pattern.test(text)) {
