@@ -20,8 +20,19 @@ research objects.
 
 - `papers/address-morphism-theory-full-paper-en-v3.md`
 - `papers/address-morphism-theory-ja-v1-master.md`
+- `papers/address-morphism-theory-protocol-expansion-ja-v1.md`
 - `papers/address-morphism-theory-ii-zero-knowledge-address-predicates.md`
 - `papers/address-morphism-theory-ii-zero-knowledge-address-predicates-ja-v1.md`
+
+## Companion Theory Papers
+
+- `papers/address-translation-theory-ja-v1.md` - address translation as
+  purpose-specific restructuring, not literal language translation.
+- `papers/address-machine-translation-theory-ja-v1.md` - guarded machine
+  translation for address structures.
+- `papers/address-morphism-theory-protocol-expansion-ja-v1.md` - private
+  delivery objects, role-based views, delivery predicates, paperless handoff,
+  and AGID/AOID protocol boundaries over AMT.
 
 ## Build
 
