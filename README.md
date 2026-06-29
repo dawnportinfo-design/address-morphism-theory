@@ -78,6 +78,9 @@ states are part of the theory, not implementation failures.
 - AMT/ZK boundary: `paper/28-amt-envelope-and-zk-predicate-boundary.md`
   defines why proof validity cannot repair AMT resolution failure and how PID
   commitments become proof requests.
+- Mathematical model core: `paper/29-mathematical-model-core.md` isolates the
+  finite AMT model, axioms, existence and uniqueness theorems, computational
+  interpretation, and paired executable model in `formal/mathematical-core.ts`.
 - Cross-series table of contents: `chapters/table-of-contents.md`
 - Core AMT: `chapters/address-morphism-theory/`
 - Zero-knowledge address predicates: `chapters/zero-knowledge-address-predicates/`
