@@ -59,6 +59,22 @@
           "description": "Classifies formal claims, executable claims, empirical targets, and remaining unverified items.",
           "modelFile": "chapters/address-morphism-theory/models/06-validation-and-open-claims.model.py",
           "modelTests": "chapters/address-morphism-theory/models/06-validation-and-open-claims.model-tests.json"
+        },
+        {
+          "order": 7,
+          "file": "chapters/address-morphism-theory/07-formal-core-axioms-and-verification.md",
+          "title": "Formal Core, Axioms, and Verification Map",
+          "description": "Collects the core definitions, axioms, morphism chain, equivalence classes, history graph, unresolved-state discipline, PID boundary, ZK boundary, counterexamples, verification map, and benchmark method.",
+          "modelFile": "chapters/address-morphism-theory/models/07-formal-core-axioms-and-verification.model.py",
+          "modelTests": "chapters/address-morphism-theory/models/07-formal-core-axioms-and-verification.model-tests.json"
+        },
+        {
+          "order": 8,
+          "file": "chapters/address-morphism-theory/08-content-addressed-evidence-model.md",
+          "title": "Content-Addressed Evidence Model",
+          "description": "Defines content-addressed artifacts, bundle roots, transform chains, license gates, publication safety gates, PID evidence gates, ZK evidence-root boundaries, counterexamples, and benchmark requirements.",
+          "modelFile": "chapters/address-morphism-theory/models/08-content-addressed-evidence-model.model.py",
+          "modelTests": "chapters/address-morphism-theory/models/08-content-addressed-evidence-model.model-tests.json"
         }
       ]
     },

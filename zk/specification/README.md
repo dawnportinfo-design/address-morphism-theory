@@ -28,6 +28,8 @@ draft -> locally verified -> externally reviewed -> audited -> deprecated
 
 ## Main Sources
 
+- `zk/specification/circuit-readiness-matrix.md`
 - `chapters/zero-knowledge-address-predicates/02-commitments-nullifiers-and-public-signals.md`
 - `chapters/zero-knowledge-address-predicates/04-proof-bundle-lifecycle.md`
 - `src/address_morphism/predicate_dsl.py`
+- `src/address_morphism/zk_circuit_readiness.py`

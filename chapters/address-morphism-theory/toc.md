@@ -28,6 +28,14 @@ Core theory for context-indexed address reference, evidence gates, abstention, l
    - Classifies formal claims, executable claims, empirical targets, and remaining unverified items.
    - Model: [06-validation-and-open-claims.model.py](models/06-validation-and-open-claims.model.py)
    - Fixtures: [06-validation-and-open-claims.model-tests.json](models/06-validation-and-open-claims.model-tests.json)
+7. [Formal Core, Axioms, and Verification Map](07-formal-core-axioms-and-verification.md)
+   - Collects the core definitions, axioms, morphism chain, equivalence classes, history graph, unresolved-state discipline, PID boundary, ZK boundary, counterexamples, verification map, and benchmark method.
+   - Model: [07-formal-core-axioms-and-verification.model.py](models/07-formal-core-axioms-and-verification.model.py)
+   - Fixtures: [07-formal-core-axioms-and-verification.model-tests.json](models/07-formal-core-axioms-and-verification.model-tests.json)
+8. [Content-Addressed Evidence Model](08-content-addressed-evidence-model.md)
+   - Defines content-addressed artifacts, bundle roots, transform chains, license gates, publication safety gates, PID evidence gates, ZK evidence-root boundaries, counterexamples, and benchmark requirements.
+   - Model: [08-content-addressed-evidence-model.model.py](models/08-content-addressed-evidence-model.model.py)
+   - Fixtures: [08-content-addressed-evidence-model.model-tests.json](models/08-content-addressed-evidence-model.model-tests.json)
 
 ## Source Paper
 
