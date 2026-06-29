@@ -112,7 +112,44 @@
         "amtState": "unresolved"
       },
       "expectedDecision": "block"
+    },
+    {
+      "id": "no-postcode-agid-to-zk-demo",
+      "amt": {
+        "schemaVersion": "amt-envelope-v0.1",
+        "referentCommitment": "commitment:referent:ae-postal-equivalent-demo",
+        "pidCommitment": "commitment:pid:ae-postal-equivalent-demo",
+        "resolutionState": "verified",
+        "qualityState": "verified",
+        "sourceSetVersion": "sources:ae-demo:v1",
+        "lineageRoot": "root:lineage:ae-demo:v1",
+        "freshnessRoot": "root:freshness:ae-demo:v1",
+        "revocationRoot": "root:revocation:ae-demo:v1",
+        "allowedPredicates": ["postal_equivalent_membership", "delivery_zone_eligibility", "freshness", "not_revoked"]
+      },
+      "zk": {
+        "schemaVersion": "zk-proof-request-v0.1",
+        "policyId": "policy:delivery:no-postcode:v1",
+        "predicate": "postal_equivalent_membership",
+        "purpose": "delivery",
+        "requestedAt": "2026-06-29T00:00:00.000Z"
+      },
+      "postal": {
+        "schemaVersion": "postal-zone-v0.1",
+        "zoneId": "postal-zone:AE:agid-equivalent:demo",
+        "countryCode": "AE",
+        "zoneState": "postal_equivalent",
+        "generationMode": "generate_postal_equivalent",
+        "sourcePolicy": "agid-zone-source-policy-v1"
+      },
+      "ai": {
+        "schemaVersion": "address-ai-output-v0.1",
+        "task": "validation",
+        "decision": "allow",
+        "sourceBacked": true,
+        "amtState": "verified"
+      },
+      "expectedDecision": "allow"
     }
   ]
 }
-

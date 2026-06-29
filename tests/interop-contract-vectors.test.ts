@@ -23,7 +23,7 @@ const fixture = JSON.parse(fs.readFileSync(fixturePath, 'utf8')) as {
 };
 
 test('AMT conformance reads shared interop vectors', () => {
-  assert.ok(fixture.vectors.length >= 3);
+  assert.ok(fixture.vectors.length >= 4);
 });
 
 test('AMT verified vector allows postal-equivalent proof request', () => {
@@ -36,4 +36,12 @@ test('AMT unresolved vector blocks proof request', () => {
   const vector = fixture.vectors.find((item) => item.id === 'unresolved-proof-blocked');
   assert.ok(vector);
   assert.equal(decideZkPredicateEligibility(vector.amt.resolutionState, vector.zk.predicate), 'blocked');
+});
+
+test('AMT no-postcode demo keeps postal-equivalent predicate eligible only after verified resolution', () => {
+  const vector = fixture.vectors.find((item) => item.id === 'no-postcode-agid-to-zk-demo');
+  assert.ok(vector);
+  assert.equal(vector.amt.resolutionState, 'verified');
+  assert.equal(vector.zk.predicate, 'postal_equivalent_membership');
+  assert.equal(decideZkPredicateEligibility(vector.amt.resolutionState, vector.zk.predicate), 'allowed');
 });
