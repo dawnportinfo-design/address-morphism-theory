@@ -40,6 +40,10 @@ states are part of the theory, not implementation failures.
   `compatibility/zk-address-predicates.md`. AMT is the resolution layer; ZK
   Address Predicates is the proof layer. A ZK proof must not upgrade an unsafe
   AMT resolution state.
+- **Interop implementer:** use
+  [`agid-interoperability-contracts`](https://github.com/dawnportinfo-design/agid-interoperability-contracts)
+  as the shared schema, type, and vector contract for AMT, ZK, Postal, and
+  Address AI compatibility.
 - **Standards / public-sector reader:** read the scope and non-goals in the
   formal core, then `verification/repository-content-gap-audit.md` for the
   trust and artifact roadmap.
