@@ -33,6 +33,9 @@ const required = [
   'paper/25-limitations.md',
   'paper/26-conclusion.md',
   'paper/27-address-payment-rails.md',
+  'paper/28-amt-envelope-and-zk-predicate-boundary.md',
+  'paper/29-mathematical-model-core.md',
+  'paper/30-ethereum-root-anchoring-boundary.md',
   'appendices/A-core-notation.md',
   'appendices/B-definitions-propositions-lemmas-theorems-corollaries.md',
   'appendices/C-counterexamples.md',
@@ -49,6 +52,8 @@ const required = [
   'formal/unresolvability.ts',
   'formal/verification-map.ts',
   'formal/address-payment-rails.ts',
+  'formal/mathematical-core.ts',
+  'formal/ethereum-root-anchoring.ts',
   'diagrams/amt-chain.mmd',
   'diagrams/history-graph.mmd',
   'diagrams/pid-boundary.mmd',
@@ -58,6 +63,8 @@ const required = [
   'tests/entropy.test.ts',
   'tests/unresolvability.test.ts',
   'tests/address-payment-rails.test.ts',
+  'tests/mathematical-core.test.ts',
+  'tests/ethereum-root-anchoring.test.ts',
 ];
 
 const errors = [];

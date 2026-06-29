@@ -7,6 +7,8 @@ reference needs a theory, what is innovative, where AMT is competitive, and how
 researchers, developers, standards readers, and AGID implementers can use it.
 For grant and public-good review, read
 [`grant-readiness/adoption-readiness.md`](grant-readiness/adoption-readiness.md).
+For Ethereum public-good review, read
+[`grant-readiness/ethereum-foundation-readiness.md`](grant-readiness/ethereum-foundation-readiness.md).
 
 AMT models address resolution as a chain of evidence-sensitive morphisms from
 surface expressions to addressable physical, social, virtual, or institutional
@@ -68,6 +70,13 @@ states are part of the theory, not implementation failures.
 - **Risk reviewer:** run `npm run verify:s-priority-decomposition` and read
   `verification/s-priority-decomposition-verification.md` to see how the top
   unverified claims are split by region, use case, source, and failure mode.
+- **Ethereum / Web3 reviewer:** read
+  `grant-readiness/ethereum-foundation-readiness.md`, then inspect
+  `paper/30-ethereum-root-anchoring-boundary.md` and
+  `formal/ethereum-root-anchoring.ts`. AMT uses Ethereum only for root-only
+  anchoring of evidence, issuer, freshness, revocation, schema, and policy
+  metadata. It rejects raw address, recipient, PID, coordinate, witness, and key
+  material.
 
 ## Repository Layout
 
@@ -97,6 +106,10 @@ states are part of the theory, not implementation failures.
 - Mathematical model core: `paper/29-mathematical-model-core.md` isolates the
   finite AMT model, axioms, existence and uniqueness theorems, computational
   interpretation, and paired executable model in `formal/mathematical-core.ts`.
+- Ethereum root anchoring boundary:
+  `paper/30-ethereum-root-anchoring-boundary.md` defines how AMT can use
+  Ethereum-compatible public roots without creating an on-chain address
+  registry. The paired model is `formal/ethereum-root-anchoring.ts`.
 - Cross-series table of contents: `chapters/table-of-contents.md`
 - Core AMT: `chapters/address-morphism-theory/`
 - Zero-knowledge address predicates: `chapters/zero-knowledge-address-predicates/`

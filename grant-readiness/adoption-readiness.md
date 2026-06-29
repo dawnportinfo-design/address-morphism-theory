@@ -48,6 +48,9 @@ resolution, including abstention when the evidence is insufficient.
 - Mozilla Foundation: public-interest technology and trustworthy AI boundaries.
 - Protocol Labs: content-addressed evidence, provenance, and verifiable public
   data workflows.
+- Ethereum Foundation: root-only public verification for AMT/ZK predicates,
+  revocation/freshness roots, verifier policy transparency, and privacy-safe
+  public-good tooling that does not put addresses on-chain.
 
 ## Next Evidence to Add
 
@@ -58,3 +61,6 @@ resolution, including abstention when the evidence is insufficient.
    no-postal-code region.
 4. A machine-readable claim register that marks each claim as tested,
    documented, planned, or out of scope.
+5. An Ethereum root-anchor demo proving that evidence, freshness, revocation,
+   issuer, schema, and policy roots can be verified without publishing raw
+   address, recipient, PID, coordinate, witness, or key material.

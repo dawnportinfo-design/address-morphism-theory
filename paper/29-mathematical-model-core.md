@@ -120,3 +120,9 @@ candidates.
 The finite model does not prove global candidate completeness. It proves that,
 given a candidate set and evidence set, the AMT resolver behaves safely with
 respect to threshold, uniqueness, contradiction, and public projection rules.
+
+## 29.8 Model hook:
+
+The executable finite model is `formal/mathematical-core.ts`.
+
+The tests are `tests/mathematical-core.test.ts`.

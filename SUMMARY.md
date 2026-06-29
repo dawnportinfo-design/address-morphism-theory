@@ -34,6 +34,9 @@ reviewed chapter by chapter.
 25. [Limitations](paper/25-limitations.md)
 26. [Conclusion](paper/26-conclusion.md)
 27. [Address Payment Rails](paper/27-address-payment-rails.md)
+28. [AMT Envelope and ZK Predicate Boundary](paper/28-amt-envelope-and-zk-predicate-boundary.md)
+29. [Mathematical Model Core](paper/29-mathematical-model-core.md)
+30. [Ethereum Root Anchoring Boundary](paper/30-ethereum-root-anchoring-boundary.md)
 
 ## Appendices
 
@@ -56,3 +59,5 @@ reviewed chapter by chapter.
 - [Unresolvability](formal/unresolvability.ts)
 - [Verification Map](formal/verification-map.ts)
 - [Address Payment Rails](formal/address-payment-rails.ts)
+- [Mathematical Model Core](formal/mathematical-core.ts)
+- [Ethereum Root Anchoring](formal/ethereum-root-anchoring.ts)

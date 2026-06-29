@@ -109,3 +109,9 @@ The shared schemas, TypeScript types, and cross-layer test vectors are maintaine
 in `agid-interoperability-contracts`. AMT should treat that repository as the
 contract source for envelope field names, state names, predicate names, and
 fixture expectations.
+
+## 28.9 Model hook:
+
+The executable boundary model is `formal/amt-zk-compatibility.ts`.
+
+The tests are `tests/amt-zk-compatibility.test.ts`.
