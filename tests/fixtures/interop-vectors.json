@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "agid-interop-vectors-v0.1",
+  "vectors": [
+    {
+      "id": "verified-postal-proof-allowed",
+      "amt": {
+        "schemaVersion": "amt-envelope-v0.1",
+        "referentCommitment": "commitment:referent:verified",
+        "pidCommitment": "commitment:pid:verified",
+        "resolutionState": "verified",
+        "qualityState": "verified",
+        "sourceSetVersion": "sources:v1",
+        "lineageRoot": "root:lineage:v1",
+        "freshnessRoot": "root:freshness:v1",
+        "revocationRoot": "root:revocation:v1",
+        "allowedPredicates": ["postal_equivalent_membership", "freshness", "not_revoked"]
+      },
+      "zk": {
+        "schemaVersion": "zk-proof-request-v0.1",
+        "policyId": "policy:delivery:v1",
+        "predicate": "postal_equivalent_membership",
+        "purpose": "delivery",
+        "requestedAt": "2026-06-29T00:00:00.000Z"
+      },
+      "postal": {
+        "schemaVersion": "postal-zone-v0.1",
+        "zoneId": "postal-zone:JP:test",
+        "countryCode": "JP",
+        "zoneState": "official",
+        "generationMode": "keep_existing",
+        "sourcePolicy": "official-postal"
+      },
+      "ai": {
+        "schemaVersion": "address-ai-output-v0.1",
+        "task": "validation",
+        "decision": "allow",
+        "sourceBacked": true,
+        "amtState": "verified"
+      },
+      "expectedDecision": "allow"
+    },
+    {
+      "id": "ambiguous-ai-manual-review",
+      "amt": {
+        "schemaVersion": "amt-envelope-v0.1",
+        "referentCommitment": "commitment:referent:ambiguous",
+        "pidCommitment": "commitment:pid:ambiguous",
+        "resolutionState": "ambiguous",
+        "qualityState": "manual_required",
+        "sourceSetVersion": "sources:v1",
+        "lineageRoot": "root:lineage:v1",
+        "freshnessRoot": "root:freshness:v1",
+        "allowedPredicates": ["freshness"]
+      },
+      "zk": {
+        "schemaVersion": "zk-proof-request-v0.1",
+        "policyId": "policy:delivery:v1",
+        "predicate": "delivery_zone_eligibility",
+        "purpose": "delivery",
+        "requestedAt": "2026-06-29T00:00:00.000Z"
+      },
+      "postal": {
+        "schemaVersion": "postal-zone-v0.1",
+        "zoneId": "postal-zone:VT:review",
+        "countryCode": "JP",
+        "zoneState": "virtual_town",
+        "generationMode": "virtual_town_overlay",
+        "sourcePolicy": "review-required"
+      },
+      "ai": {
+        "schemaVersion": "address-ai-output-v0.1",
+        "task": "completion",
+        "decision": "manual_review",
+        "sourceBacked": false,
+        "amtState": "ambiguous"
+      },
+      "expectedDecision": "manual_review"
+    },
+    {
+      "id": "unresolved-proof-blocked",
+      "amt": {
+        "schemaVersion": "amt-envelope-v0.1",
+        "referentCommitment": "commitment:referent:unresolved",
+        "pidCommitment": "commitment:pid:unresolved",
+        "resolutionState": "unresolved",
+        "qualityState": "manual_required",
+        "sourceSetVersion": "sources:v1",
+        "lineageRoot": "root:lineage:v1",
+        "freshnessRoot": "root:freshness:v1",
+        "allowedPredicates": []
+      },
+      "zk": {
+        "schemaVersion": "zk-proof-request-v0.1",
+        "policyId": "policy:delivery:v1",
+        "predicate": "region_membership",
+        "purpose": "delivery",
+        "requestedAt": "2026-06-29T00:00:00.000Z"
+      },
+      "postal": {
+        "schemaVersion": "postal-zone-v0.1",
+        "zoneId": "postal-zone:AGID:fallback",
+        "countryCode": "AE",
+        "zoneState": "postal_equivalent",
+        "generationMode": "generate_postal_equivalent",
+        "sourcePolicy": "addressgrid-fallback"
+      },
+      "ai": {
+        "schemaVersion": "address-ai-output-v0.1",
+        "task": "geocoding",
+        "decision": "block",
+        "sourceBacked": false,
+        "amtState": "unresolved"
+      },
+      "expectedDecision": "block"
+    }
+  ]
+}
+

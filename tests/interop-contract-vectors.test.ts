@@ -14,7 +14,11 @@ type ContractVector = {
   };
 };
 
-const fixture = JSON.parse(fs.readFileSync('../agid-interoperability-contracts/fixtures/interop-vectors.json', 'utf8')) as {
+const contractFixturePath = '../agid-interoperability-contracts/fixtures/interop-vectors.json';
+const localFixturePath = 'tests/fixtures/interop-vectors.json';
+const fixturePath = fs.existsSync(contractFixturePath) ? contractFixturePath : localFixturePath;
+
+const fixture = JSON.parse(fs.readFileSync(fixturePath, 'utf8')) as {
   vectors: ContractVector[];
 };
 
@@ -33,4 +37,3 @@ test('AMT unresolved vector blocks proof request', () => {
   assert.ok(vector);
   assert.equal(decideZkPredicateEligibility(vector.amt.resolutionState, vector.zk.predicate), 'blocked');
 });
-
