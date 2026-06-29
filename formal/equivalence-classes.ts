@@ -3,7 +3,7 @@ import type { Purpose } from './definitions.ts';
 export type AddressExpression = {
   expression: string;
   referentId: string;
-  validPurposes: Purpose[];
+  validPurposes: readonly Purpose[];
 };
 
 export function equivalentForPurpose(left: AddressExpression, right: AddressExpression, purpose: Purpose): boolean {
@@ -14,6 +14,10 @@ export function equivalentForPurpose(left: AddressExpression, right: AddressExpr
   );
 }
 
-export function equivalenceClass(expressions: AddressExpression[], target: AddressExpression, purpose: Purpose) {
+export function equivalenceClass(
+  expressions: readonly AddressExpression[],
+  target: AddressExpression,
+  purpose: Purpose,
+) {
   return expressions.filter(expression => equivalentForPurpose(expression, target, purpose));
 }
