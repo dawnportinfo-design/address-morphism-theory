@@ -18,8 +18,15 @@
     "verify:predicate-dsl": "python scripts/verify_predicate_dsl.py",
     "verify:s-priority": "python scripts/verify_s_priority_plan.py",
     "verify:s-priority-decomposition": "python scripts/verify_s_priority_decomposition.py",
+    "verify:formal-tree": "node scripts/verify-formal-tree.cjs",
+    "test:formal": "tsx --test tests/*.test.ts",
     "verify:publication-safety": "python scripts/verify_publication_safety.py",
     "verify:publication-safety:self-test": "python scripts/verify_publication_safety.py --self-test",
     "verify:pdfs": "python scripts/verify_pdfs.py"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }

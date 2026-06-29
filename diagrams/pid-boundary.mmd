@@ -1,0 +1,8 @@
+flowchart LR
+  R["AMT referent"] --> P["PID"]
+  P --> A["Delivery receipt ID"]
+  P --> B["Hotel handoff ID"]
+  P --> C["Locker pickup ID"]
+  A -. "must not redefine" .-> R
+  B -. "must not redefine" .-> R
+  C -. "must not redefine" .-> R

@@ -59,6 +59,8 @@ states are part of the theory, not implementation failures.
 
 ## Chapterized Reading Paths
 
+- Formal paper tree requested for chapter-by-chapter review: `SUMMARY.md`,
+  `paper/`, `appendices/`, `formal/`, `diagrams/`, and `tests/`.
 - Cross-series table of contents: `chapters/table-of-contents.md`
 - Core AMT: `chapters/address-morphism-theory/`
 - Zero-knowledge address predicates: `chapters/zero-knowledge-address-predicates/`
@@ -68,6 +70,7 @@ states are part of the theory, not implementation failures.
 - Postal-zone generation theory: `chapters/postal-zone-generation-theory/`
 
 The chapter index is machine-checked by `npm run verify:chapters`.
+The formal paper tree is machine-checked by `npm run verify:formal-tree`.
 The ZK material map is machine-checked by `npm run verify:zk-materials`.
 Each chapter now has a paired executable mathematical model under the chapter
 series' `models/` directory, plus a `*.model-tests.json` fixture. These models
@@ -96,6 +99,7 @@ are small local references for claims, not production systems.
 
 ```powershell
 npm run verify:model
+npm run verify:formal-tree
 npm run verify:chapters
 npm run verify:predicate-dsl
 npm run verify:zk-materials
