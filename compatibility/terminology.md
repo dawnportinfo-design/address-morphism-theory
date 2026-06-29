@@ -21,4 +21,3 @@ Code Generation Theory, and Address AI Learning Theory.
 When terms differ across repositories, `agid-interoperability-contracts` is the
 contract source for field names and state names. Papers may explain concepts in
 natural language, but schemas and tests decide implementation compatibility.
-

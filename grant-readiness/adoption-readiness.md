@@ -58,4 +58,3 @@ resolution, including abstention when the evidence is insufficient.
    no-postal-code region.
 4. A machine-readable claim register that marks each claim as tested,
    documented, planned, or out of scope.
-

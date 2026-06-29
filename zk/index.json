@@ -76,6 +76,11 @@
       "file": "src/address_morphism/predicate_dsl.py",
       "role": "reference-model",
       "verification": "scripts/verify_predicate_dsl.py"
+    },
+    {
+      "file": "src/address_morphism/zk_circuit_readiness.py",
+      "role": "circuit-readiness-model",
+      "verification": "scripts/verify_zk_circuit_readiness.py"
     }
   ]
 }

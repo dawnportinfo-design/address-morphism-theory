@@ -35,6 +35,11 @@ states are part of the theory, not implementation failures.
   model, then inspect `verification/address-morphism-executable-expectations.md`.
   For privacy predicates, run `npm run verify:predicate-dsl` and inspect
   `src/address_morphism/predicate_dsl.py`.
+- **Implementer:** run `npm run verify:core-library` and inspect
+  `src/address_morphism/core.py` for the reusable AMT library covering
+  content-addressed evidence, candidate resolution, history graph validation,
+  PID issuance, AMT envelopes, equivalence classes, and benchmark readiness.
+  The concept-to-code map is `verification/amt-core-library-map.md`.
 - **ZK reviewer:** start with `zk/README.md`. It splits ZK materials into
   theory, specification, implementation, applications, and unverified claims,
   and explains which paper is canonical.
@@ -51,6 +56,15 @@ states are part of the theory, not implementation failures.
   trust and artifact roadmap.
 - **Reviewer:** read `verification/main5-formal-additions.md` to see which
   manuscript ideas were promoted into definitions, theorems, and tests.
+- **Formal methods reviewer:** read
+  `chapters/address-morphism-theory/07-formal-core-axioms-and-verification.md`
+  for consolidated definitions, axioms, morphism chain, equivalence classes,
+  history graph, PID issuance boundary, ZK boundary, counterexamples,
+  verification map, and benchmark method.
+- **Evidence / data reviewer:** read
+  `chapters/address-morphism-theory/08-content-addressed-evidence-model.md`
+  for content-addressed artifacts, evidence bundle roots, transform chains,
+  license gates, publication safety gates, and evidence-root binding.
 - **Risk reviewer:** run `npm run verify:s-priority-decomposition` and read
   `verification/s-priority-decomposition-verification.md` to see how the top
   unverified claims are split by region, use case, source, and failure mode.
@@ -97,6 +111,10 @@ The ZK material map is machine-checked by `npm run verify:zk-materials`.
 Each chapter now has a paired executable mathematical model under the chapter
 series' `models/` directory, plus a `*.model-tests.json` fixture. These models
 are small local references for claims, not production systems.
+The consolidated AMT formal core is
+`chapters/address-morphism-theory/07-formal-core-axioms-and-verification.md`.
+The content-addressed evidence model is
+`chapters/address-morphism-theory/08-content-addressed-evidence-model.md`.
 
 ## Primary Manuscripts
 
@@ -121,6 +139,7 @@ are small local references for claims, not production systems.
 
 ```powershell
 npm run verify:model
+npm run verify:core-library
 npm run verify:formal-tree
 npm run verify:chapters
 npm run verify:predicate-dsl
