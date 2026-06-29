@@ -75,6 +75,9 @@ states are part of the theory, not implementation failures.
   use like electronic payment, with authorization, capture, settlement,
   reversal, dispute, revocation, receipts, and tokenized role-minimized
   disclosure.
+- AMT/ZK boundary: `paper/28-amt-envelope-and-zk-predicate-boundary.md`
+  defines why proof validity cannot repair AMT resolution failure and how PID
+  commitments become proof requests.
 - Cross-series table of contents: `chapters/table-of-contents.md`
 - Core AMT: `chapters/address-morphism-theory/`
 - Zero-knowledge address predicates: `chapters/zero-knowledge-address-predicates/`

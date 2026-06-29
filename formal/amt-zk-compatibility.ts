@@ -14,7 +14,8 @@ export type AMTZkPredicate =
   | 'freshness'
   | 'not_revoked'
   | 'delivery_zone_eligibility'
-  | 'anonymous_rate_limit';
+  | 'anonymous_rate_limit'
+  | 'postal_equivalent_membership';
 
 export type AMTZkDecision = 'allowed' | 'limited' | 'blocked' | 'policy_dependent';
 
@@ -29,6 +30,7 @@ const predicateRules: Record<AMTZkResolutionState, { decision: AMTZkDecision; pr
       'not_revoked',
       'delivery_zone_eligibility',
       'anonymous_rate_limit',
+      'postal_equivalent_membership',
     ],
   },
   partial: {
@@ -67,4 +69,3 @@ export function decideZkPredicateEligibility(
   }
   return rule.decision;
 }
-
