@@ -5,6 +5,8 @@ Independent research repository for Address Morphism Theory (AMT).
 **New to AMT? Start with [`RESUME.md`](RESUME.md).** It explains why address
 reference needs a theory, what is innovative, where AMT is competitive, and how
 researchers, developers, standards readers, and AGID implementers can use it.
+For grant and public-good review, read
+[`grant-readiness/adoption-readiness.md`](grant-readiness/adoption-readiness.md).
 
 AMT models address resolution as a chain of evidence-sensitive morphisms from
 surface expressions to addressable physical, social, virtual, or institutional
