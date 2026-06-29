@@ -36,6 +36,10 @@ states are part of the theory, not implementation failures.
 - **ZK reviewer:** start with `zk/README.md`. It splits ZK materials into
   theory, specification, implementation, applications, and unverified claims,
   and explains which paper is canonical.
+- **Privacy-proof implementer:** read
+  `compatibility/zk-address-predicates.md`. AMT is the resolution layer; ZK
+  Address Predicates is the proof layer. A ZK proof must not upgrade an unsafe
+  AMT resolution state.
 - **Standards / public-sector reader:** read the scope and non-goals in the
   formal core, then `verification/repository-content-gap-audit.md` for the
   trust and artifact roadmap.
@@ -53,6 +57,8 @@ states are part of the theory, not implementation failures.
 - `papers/` - active English and Japanese manuscripts.
 - `notes/` - chapter drafts, outlines, and research resumes.
 - `verification/` - claim maps, expectation tests, audits, and verification boundaries.
+- `compatibility/` - cross-repository boundary, compatibility matrix, and
+  AMT-to-ZK test vectors.
 - `src/` - small dependency-free executable reference models.
 - `scripts/` - local manuscript assembly and PDF generation tools.
 - `output/pdf/` - generated PDFs and HTML exports. This directory is ignored by Git.
