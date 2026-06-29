@@ -33,6 +33,7 @@ reviewed chapter by chapter.
 24. [Case Studies](paper/24-case-studies.md)
 25. [Limitations](paper/25-limitations.md)
 26. [Conclusion](paper/26-conclusion.md)
+27. [Address Payment Rails](paper/27-address-payment-rails.md)
 
 ## Appendices
 
@@ -54,3 +55,4 @@ reviewed chapter by chapter.
 - [History Graph](formal/history-graph.ts)
 - [Unresolvability](formal/unresolvability.ts)
 - [Verification Map](formal/verification-map.ts)
+- [Address Payment Rails](formal/address-payment-rails.ts)

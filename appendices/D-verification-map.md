@@ -8,3 +8,4 @@
 | Entropy can track ambiguity | executable model | `formal/entropy.ts` |
 | History has lineage states | executable model | `formal/history-graph.ts` |
 | ZK is boundary material, not solved security | document | `paper/18-amt-cryptographic-extension-boundary.md` |
+| Address use can be payment-like | executable model | `formal/address-payment-rails.ts` |

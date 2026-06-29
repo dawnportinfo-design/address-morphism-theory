@@ -61,6 +61,10 @@ states are part of the theory, not implementation failures.
 
 - Formal paper tree requested for chapter-by-chapter review: `SUMMARY.md`,
   `paper/`, `appendices/`, `formal/`, `diagrams/`, and `tests/`.
+- Address payment rails: `paper/27-address-payment-rails.md` models address
+  use like electronic payment, with authorization, capture, settlement,
+  reversal, dispute, revocation, receipts, and tokenized role-minimized
+  disclosure.
 - Cross-series table of contents: `chapters/table-of-contents.md`
 - Core AMT: `chapters/address-morphism-theory/`
 - Zero-knowledge address predicates: `chapters/zero-knowledge-address-predicates/`

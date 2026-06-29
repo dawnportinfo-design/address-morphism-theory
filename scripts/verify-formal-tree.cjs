@@ -32,6 +32,7 @@ const required = [
   'paper/24-case-studies.md',
   'paper/25-limitations.md',
   'paper/26-conclusion.md',
+  'paper/27-address-payment-rails.md',
   'appendices/A-core-notation.md',
   'appendices/B-definitions-propositions-lemmas-theorems-corollaries.md',
   'appendices/C-counterexamples.md',
@@ -47,6 +48,7 @@ const required = [
   'formal/history-graph.ts',
   'formal/unresolvability.ts',
   'formal/verification-map.ts',
+  'formal/address-payment-rails.ts',
   'diagrams/amt-chain.mmd',
   'diagrams/history-graph.mmd',
   'diagrams/pid-boundary.mmd',
@@ -55,6 +57,7 @@ const required = [
   'tests/equivalence-classes.test.ts',
   'tests/entropy.test.ts',
   'tests/unresolvability.test.ts',
+  'tests/address-payment-rails.test.ts',
 ];
 
 const errors = [];
