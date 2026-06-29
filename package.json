@@ -15,6 +15,7 @@
     "verify:chapters": "python scripts/verify_chapter_index.py",
     "verify:zk-materials": "python scripts/verify_zk_materials.py",
     "verify:zk-circuit-readiness": "python scripts/verify_zk_circuit_readiness.py",
+    "verify:zk-demo": "python scripts/verify_no_postcode_zk_demo.py",
     "verify:core-library": "python scripts/verify_amt_core_library.py",
     "verify:model": "python scripts/verify_amt_executable_model.py",
     "verify:predicate-dsl": "python scripts/verify_predicate_dsl.py",

@@ -6,9 +6,24 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCAN_DIRS = ["papers", "notes", "verification", "scripts", "chapters", "src", "zk"]
+SCAN_DIRS = [
+    "adoption",
+    "audit",
+    "chapters",
+    "circuits",
+    "compatibility",
+    "demos",
+    "formal",
+    "grant-readiness",
+    "notes",
+    "papers",
+    "scripts",
+    "src",
+    "verification",
+    "zk",
+]
 ROOT_TEXT_FILES = ["README.md", "REPOSITORY_SPLIT.md", "package.json", "LICENSE", "LICENSE-PAPERS.md"]
-TEXT_SUFFIXES = {".md", ".tex", ".py", ".cjs", ".json", ".txt"}
+TEXT_SUFFIXES = {".circom", ".cjs", ".json", ".md", ".py", ".tex", ".ts", ".txt"}
 
 DENY_PATTERNS = [
     ("private-key-block", re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----")),

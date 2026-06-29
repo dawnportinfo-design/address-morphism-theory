@@ -10,6 +10,7 @@ const STEPS = [
   ["python", ["scripts/verify_chapter_index.py"]],
   ["python", ["scripts/verify_zk_materials.py"]],
   ["python", ["scripts/verify_zk_circuit_readiness.py"]],
+  ["python", ["scripts/verify_no_postcode_zk_demo.py"]],
   ["python", ["scripts/verify_amt_core_library.py"]],
   ["python", ["scripts/verify_amt_executable_model.py"]],
   ["python", ["scripts/verify_predicate_dsl.py"]],

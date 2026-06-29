@@ -77,6 +77,11 @@ states are part of the theory, not implementation failures.
   anchoring of evidence, issuer, freshness, revocation, schema, and policy
   metadata. It rejects raw address, recipient, PID, coordinate, witness, and key
   material.
+- **ZK demo reviewer:** run `npm run verify:zk-demo`, inspect
+  `circuits/no-postcode-postal-equivalent.circom`, then read
+  `audit/zk-audit-readiness.md` and
+  `adoption/open-source-zk-onboarding.md`. The current circuit is a prototype,
+  not an audited production circuit.
 
 ## Repository Layout
 
@@ -110,6 +115,12 @@ states are part of the theory, not implementation failures.
   `paper/30-ethereum-root-anchoring-boundary.md` defines how AMT can use
   Ethereum-compatible public roots without creating an on-chain address
   registry. The paired model is `formal/ethereum-root-anchoring.ts`.
+- No-postcode private proof demo:
+  `demos/no-postcode-private-proof-demo.json` and
+  `circuits/no-postcode-postal-equivalent.circom` provide a synthetic
+  end-to-end path from no-postcode region to postal-equivalent predicate,
+  verifier decision, and root-only Ethereum anchor. It is verified by
+  `scripts/verify_no_postcode_zk_demo.py`.
 - Cross-series table of contents: `chapters/table-of-contents.md`
 - Core AMT: `chapters/address-morphism-theory/`
 - Zero-knowledge address predicates: `chapters/zero-knowledge-address-predicates/`
@@ -157,6 +168,7 @@ npm run verify:formal-tree
 npm run verify:chapters
 npm run verify:predicate-dsl
 npm run verify:zk-materials
+npm run verify:zk-demo
 npm run build:full-pdfs
 npm run build:bilingual
 npm run verify
@@ -179,6 +191,9 @@ anonymity-set rules without exposing raw address material in public signals.
 `npm run verify:zk-materials` verifies that ZK materials are separated into
 theory, specification, implementation, applications, and unverified claims, and
 that exactly one ZK paper is marked canonical.
+`npm run verify:zk-demo` verifies the no-postcode private proof demo, checks the
+prototype circuit public signal boundary, rejects private fixture keys, and
+confirms that the demo does not claim production audit.
 `npm run verify:s-priority-decomposition` verifies that the highest-risk
 unverified claims are decomposed by region, use case, data source, metrics, and
 failure behavior, and that failure states block precise verified issuance.

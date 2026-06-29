@@ -53,6 +53,7 @@ private keys, or proof internals.
 | Locker / PUDO claim | `holderAuthorized(lockerPolicy)` | authorization credential, policy path | locker policy ID, result, nullifier | authorization membership, replay prevention | `model-ready` | hardware integration and QR/PIN retention policy |
 | Hotel / PMS validation | `country && formatValid && consent && freshness` | credential, country path, format attestation | country class, format class, result | purpose scope, issuer trust, non-disclosure | `model-ready` | PMS connector audit |
 | Web3 anchor | `rootKnown && proofOffChain` | off-chain proof bundle, registry state | root, registry ID, result | root anchoring, no address on-chain | `model-ready` | smart-contract audit and chain privacy review |
+| No-postcode postal-equivalent | `resolved && postalEquivalent && region && quality && freshness && notRevoked && consent && anonymity` | AMT envelope-derived private checks, postal-equivalent membership, consent, freshness, revocation, anonymity lower bound | `commitmentHash`, `regionRoot`, `freshnessRoot`, `revocationRoot`, `policyHash`, `nullifier`, `result` | AMT state guard, postal-equivalent membership, quality threshold, freshness window, revocation exclusion, consent scope, anonymity minimum | `prototype-ready` | replace prototype flags with audited inclusion gadgets and external audit |
 
 ## AMT State Guard
 
@@ -92,3 +93,17 @@ private inputs, public signals, failure reasons, and test-vector classes are
 defined. It must not claim production cryptographic security until a concrete
 circuit, proof system configuration, trusted setup or setup-free choice,
 implementation review, and external audit are complete.
+
+## Prototype Circuit
+
+`circuits/no-postcode-postal-equivalent.circom` is an audit-target prototype for
+the no-postcode postal-equivalent path. It is useful for grant and open-source
+review because it makes the intended public signals and refusal conditions
+concrete.
+
+It remains blocked from production because membership flags must be replaced
+with audited Merkle inclusion gadgets, revocation/freshness/issuer roots must be
+bound inside the final circuit, proof-system parameters must be selected, and an
+external cryptographic audit is still required.
+
+The demo gate is `npm run verify:zk-demo`.

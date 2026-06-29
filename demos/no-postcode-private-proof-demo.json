@@ -1,0 +1,97 @@
+{
+  "schema": "agid-no-postcode-private-proof-demo-v0.1",
+  "region": {
+    "regionId": "AGID-HK-SYNTHETIC-ZONE-001",
+    "countryCode": "HK",
+    "postalStatus": "no_official_postcode",
+    "postalEquivalent": true,
+    "sourcePolicy": "synthetic-public-demo",
+    "rawAddressIncluded": false
+  },
+  "amtEnvelope": {
+    "version": "amt-envelope-v0.1",
+    "resolutionState": "resolved",
+    "qualityState": "verified",
+    "referentCommitment": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "pidCommitment": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "lineageRoot": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+    "sourceSetVersion": "demo-2026-06",
+    "allowedPredicates": [
+      "postal_equivalent_membership",
+      "region_membership",
+      "freshness",
+      "not_revoked",
+      "consent_scope",
+      "anonymous_rate_limit"
+    ]
+  },
+  "predicateRequest": {
+    "predicateId": "postal_equivalent_membership",
+    "purpose": "delivery",
+    "requiredRegion": "AGID-HK-SYNTHETIC-ZONE-001",
+    "minimumQuality": 0.9,
+    "maximumAgeDays": 30,
+    "requiredScope": "delivery",
+    "minimumAnonymitySet": 128,
+    "nullifierScope": "merchant-demo-epoch-2026-06"
+  },
+  "privateSubjectSummary": {
+    "commitmentId": "commitment-demo-hk-001",
+    "regionIds": [
+      "AGID-HK-SYNTHETIC-ZONE-001"
+    ],
+    "qualityScore": 0.97,
+    "credentialIssuedAt": "2026-06-15T00:00:00Z",
+    "revoked": false,
+    "consentScopes": [
+      "delivery"
+    ],
+    "anonymitySetSize": 512
+  },
+  "circuitProfile": {
+    "file": "circuits/no-postcode-postal-equivalent.circom",
+    "proofSystemTarget": "circom-groth16-or-plonk-profile",
+    "auditStatus": "audit_required",
+    "productionReady": false
+  },
+  "ethereumAnchor": {
+    "version": "ethereum-root-anchor-v0.1",
+    "chainId": 1,
+    "epoch": "2026-06",
+    "evidenceRoot": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "issuerRegistryRoot": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "freshnessRoot": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "revocationRoot": "0xdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "policyId": "agid.delivery.zk.no-postcode.v0",
+    "schemaHash": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+  },
+  "expectedDecision": {
+    "verifierDecision": "accepted",
+    "publicSignalsOnly": true,
+    "rawAddressReturned": false,
+    "proofIsProductionAudited": false
+  },
+  "refusalCases": [
+    {
+      "caseId": "unresolved-amt-state",
+      "change": "resolutionState=unresolved",
+      "expectedDecision": "blocked"
+    },
+    {
+      "caseId": "revoked-credential",
+      "change": "revoked=true",
+      "expectedDecision": "blocked"
+    },
+    {
+      "caseId": "stale-credential",
+      "change": "credentialIssuedAt=2026-04-01T00:00:00Z",
+      "expectedDecision": "blocked"
+    },
+    {
+      "caseId": "singleton-anonymity",
+      "change": "anonymitySetSize=1",
+      "expectedDecision": "blocked"
+    }
+  ]
+}
+
