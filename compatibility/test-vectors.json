@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "amt-zk-test-vectors-v0.1",
+  "vectors": [
+    {
+      "id": "verified-delivery-zone",
+      "resolutionState": "verified",
+      "qualityState": "verified",
+      "requestedPredicate": "delivery_zone_eligibility",
+      "expectedDecision": "allowed"
+    },
+    {
+      "id": "partial-quality-only",
+      "resolutionState": "partial",
+      "qualityState": "partial",
+      "requestedPredicate": "quality_threshold",
+      "expectedDecision": "limited"
+    },
+    {
+      "id": "ambiguous-deliverability-blocked",
+      "resolutionState": "ambiguous",
+      "qualityState": "manual_required",
+      "requestedPredicate": "delivery_zone_eligibility",
+      "expectedDecision": "blocked"
+    },
+    {
+      "id": "unresolved-proof-blocked",
+      "resolutionState": "unresolved",
+      "qualityState": "manual_required",
+      "requestedPredicate": "region_membership",
+      "expectedDecision": "blocked"
+    },
+    {
+      "id": "deprecated-successor-required",
+      "resolutionState": "deprecated",
+      "qualityState": "partial",
+      "requestedPredicate": "consent_scope",
+      "expectedDecision": "blocked"
+    },
+    {
+      "id": "disputed-policy-dependent",
+      "resolutionState": "disputed",
+      "qualityState": "partial",
+      "requestedPredicate": "anonymous_rate_limit",
+      "expectedDecision": "policy_dependent"
+    }
+  ]
+}

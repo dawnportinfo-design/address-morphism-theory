@@ -1,0 +1,8 @@
+flowchart LR
+  E["Surface expression"] --> N["Normalized expression"]
+  N --> C["Candidate set"]
+  C --> S["Evidence state"]
+  S --> R["Referent state"]
+  R --> P["Persistent identifier"]
+  P --> V["Purpose-specific view"]
+  S --> U["Unresolved / ambiguous / rejected"]

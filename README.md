@@ -2,6 +2,12 @@
 
 Independent research repository for Address Morphism Theory (AMT).
 
+**New to AMT? Start with [`RESUME.md`](RESUME.md).** It explains why address
+reference needs a theory, what is innovative, where AMT is competitive, and how
+researchers, developers, standards readers, and AGID implementers can use it.
+For grant and public-good review, read
+[`grant-readiness/adoption-readiness.md`](grant-readiness/adoption-readiness.md).
+
 AMT models address resolution as a chain of evidence-sensitive morphisms from
 surface expressions to addressable physical, social, virtual, or institutional
 entities. It treats ambiguity, incomplete candidates, lineage, unresolved
@@ -20,6 +26,8 @@ states are part of the theory, not implementation failures.
 
 ## Reader Paths
 
+- **First-time reader:** read `RESUME.md` before the formal material. It gives a
+  non-specialist map of the problem, innovation, use cases, and current limits.
 - **Researcher:** start with `chapters/README.md`, then read the chapterized
   core theory under `chapters/address-morphism-theory/`. Use
   `papers/address-morphism-theory-formal-core.tex` as the compact formal source.
@@ -35,6 +43,14 @@ states are part of the theory, not implementation failures.
 - **ZK reviewer:** start with `zk/README.md`. It splits ZK materials into
   theory, specification, implementation, applications, and unverified claims,
   and explains which paper is canonical.
+- **Privacy-proof implementer:** read
+  `compatibility/zk-address-predicates.md`. AMT is the resolution layer; ZK
+  Address Predicates is the proof layer. A ZK proof must not upgrade an unsafe
+  AMT resolution state.
+- **Interop implementer:** use
+  [`agid-interoperability-contracts`](https://github.com/dawnportinfo-design/agid-interoperability-contracts)
+  as the shared schema, type, and vector contract for AMT, ZK, Postal, and
+  Address AI compatibility.
 - **Standards / public-sector reader:** read the scope and non-goals in the
   formal core, then `verification/repository-content-gap-audit.md` for the
   trust and artifact roadmap.
@@ -61,12 +77,26 @@ states are part of the theory, not implementation failures.
 - `papers/` - active English and Japanese manuscripts.
 - `notes/` - chapter drafts, outlines, and research resumes.
 - `verification/` - claim maps, expectation tests, audits, and verification boundaries.
+- `compatibility/` - cross-repository boundary, compatibility matrix, and
+  AMT-to-ZK test vectors.
 - `src/` - small dependency-free executable reference models.
 - `scripts/` - local manuscript assembly and PDF generation tools.
 - `output/pdf/` - generated PDFs and HTML exports. This directory is ignored by Git.
 
 ## Chapterized Reading Paths
 
+- Formal paper tree requested for chapter-by-chapter review: `SUMMARY.md`,
+  `paper/`, `appendices/`, `formal/`, `diagrams/`, and `tests/`.
+- Address payment rails: `paper/27-address-payment-rails.md` models address
+  use like electronic payment, with authorization, capture, settlement,
+  reversal, dispute, revocation, receipts, and tokenized role-minimized
+  disclosure.
+- AMT/ZK boundary: `paper/28-amt-envelope-and-zk-predicate-boundary.md`
+  defines why proof validity cannot repair AMT resolution failure and how PID
+  commitments become proof requests.
+- Mathematical model core: `paper/29-mathematical-model-core.md` isolates the
+  finite AMT model, axioms, existence and uniqueness theorems, computational
+  interpretation, and paired executable model in `formal/mathematical-core.ts`.
 - Cross-series table of contents: `chapters/table-of-contents.md`
 - Core AMT: `chapters/address-morphism-theory/`
 - Zero-knowledge address predicates: `chapters/zero-knowledge-address-predicates/`
@@ -76,6 +106,7 @@ states are part of the theory, not implementation failures.
 - Postal-zone generation theory: `chapters/postal-zone-generation-theory/`
 
 The chapter index is machine-checked by `npm run verify:chapters`.
+The formal paper tree is machine-checked by `npm run verify:formal-tree`.
 The ZK material map is machine-checked by `npm run verify:zk-materials`.
 Each chapter now has a paired executable mathematical model under the chapter
 series' `models/` directory, plus a `*.model-tests.json` fixture. These models
@@ -109,6 +140,7 @@ The content-addressed evidence model is
 ```powershell
 npm run verify:model
 npm run verify:core-library
+npm run verify:formal-tree
 npm run verify:chapters
 npm run verify:predicate-dsl
 npm run verify:zk-materials

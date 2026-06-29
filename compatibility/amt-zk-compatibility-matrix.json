@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "amt-zk-compatibility-matrix-v0.1",
+  "principle": "ZK predicates inherit AMT resolution limits and must not upgrade an unsafe AMT state.",
+  "states": [
+    {
+      "resolutionState": "verified",
+      "proofEligibility": "allowed",
+      "allowedPredicates": [
+        "region_membership",
+        "quality_threshold",
+        "consent_scope",
+        "freshness",
+        "not_revoked",
+        "delivery_zone_eligibility",
+        "anonymous_rate_limit",
+        "postal_equivalent_membership"
+      ],
+      "minimumNextAction": "Issue scoped proof bundle under verifier policy."
+    },
+    {
+      "resolutionState": "partial",
+      "proofEligibility": "limited",
+      "allowedPredicates": [
+        "quality_threshold",
+        "freshness",
+        "not_revoked",
+        "anonymous_rate_limit"
+      ],
+      "blockedPredicates": [
+        "delivery_zone_eligibility"
+      ],
+      "minimumNextAction": "Request more evidence before precise deliverability proof."
+    },
+    {
+      "resolutionState": "ambiguous",
+      "proofEligibility": "manual_review",
+      "allowedPredicates": [
+        "freshness",
+        "not_revoked"
+      ],
+      "blockedPredicates": [
+        "region_membership",
+        "quality_threshold",
+        "delivery_zone_eligibility"
+      ],
+      "minimumNextAction": "Resolve candidate ambiguity or issue only non-precise status."
+    },
+    {
+      "resolutionState": "unresolved",
+      "proofEligibility": "blocked",
+      "allowedPredicates": [],
+      "minimumNextAction": "Do not issue PID-bound proof; continue candidate generation."
+    },
+    {
+      "resolutionState": "rejected",
+      "proofEligibility": "blocked",
+      "allowedPredicates": [],
+      "minimumNextAction": "Do not issue proof bundle."
+    },
+    {
+      "resolutionState": "deprecated",
+      "proofEligibility": "successor_required",
+      "allowedPredicates": [
+        "freshness",
+        "not_revoked"
+      ],
+      "minimumNextAction": "Resolve successor envelope before purpose proof."
+    },
+    {
+      "resolutionState": "disputed",
+      "proofEligibility": "policy_dependent",
+      "allowedPredicates": [
+        "freshness",
+        "not_revoked",
+        "anonymous_rate_limit"
+      ],
+      "minimumNextAction": "Apply verifier policy and jurisdictional source policy."
+    }
+  ]
+}

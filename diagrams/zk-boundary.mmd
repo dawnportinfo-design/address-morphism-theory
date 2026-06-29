@@ -1,0 +1,8 @@
+flowchart LR
+  A["AMT envelope"] --> C["Commitment"]
+  A --> W["Private witness"]
+  C --> P["Public signals"]
+  W --> Z["ZK predicate proof"]
+  P --> Z
+  Z --> V["Verifier policy"]
+  V --> O["Accept / reject / manual review"]
