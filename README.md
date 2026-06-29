@@ -2,6 +2,10 @@
 
 Independent research repository for Address Morphism Theory (AMT).
 
+**New to AMT? Start with [`RESUME.md`](RESUME.md).** It explains why address
+reference needs a theory, what is innovative, where AMT is competitive, and how
+researchers, developers, standards readers, and AGID implementers can use it.
+
 AMT models address resolution as a chain of evidence-sensitive morphisms from
 surface expressions to addressable physical, social, virtual, or institutional
 entities. It treats ambiguity, incomplete candidates, lineage, unresolved
@@ -20,6 +24,8 @@ states are part of the theory, not implementation failures.
 
 ## Reader Paths
 
+- **First-time reader:** read `RESUME.md` before the formal material. It gives a
+  non-specialist map of the problem, innovation, use cases, and current limits.
 - **Researcher:** start with `chapters/README.md`, then read the chapterized
   core theory under `chapters/address-morphism-theory/`. Use
   `papers/address-morphism-theory-formal-core.tex` as the compact formal source.
