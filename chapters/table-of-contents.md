@@ -15,6 +15,8 @@ Core theory for context-indexed address reference, evidence gates, abstention, l
   4. [Morphisms, Lineage, and Reconstruction](address-morphism-theory/04-morphisms-lineage-and-reconstruction.md) - model: [04-morphisms-lineage-and-reconstruction.model.py](address-morphism-theory/models/04-morphisms-lineage-and-reconstruction.model.py)
   5. [Protocol Boundaries and Applications](address-morphism-theory/05-protocol-boundaries-and-applications.md) - model: [05-protocol-boundaries-and-applications.model.py](address-morphism-theory/models/05-protocol-boundaries-and-applications.model.py)
   6. [Validation and Open Claims](address-morphism-theory/06-validation-and-open-claims.md) - model: [06-validation-and-open-claims.model.py](address-morphism-theory/models/06-validation-and-open-claims.model.py)
+  7. [Formal Core, Axioms, and Verification Map](address-morphism-theory/07-formal-core-axioms-and-verification.md) - model: [07-formal-core-axioms-and-verification.model.py](address-morphism-theory/models/07-formal-core-axioms-and-verification.model.py)
+  8. [Content-Addressed Evidence Model](address-morphism-theory/08-content-addressed-evidence-model.md) - model: [08-content-addressed-evidence-model.model.py](address-morphism-theory/models/08-content-addressed-evidence-model.model.py)
 
 ## Zero-Knowledge Address Predicates
 
@@ -61,4 +63,3 @@ Mathematical model for postal-equivalent zones in reliable, weak, and no-postcod
   1. [Postal Equivalence](postal-zone-generation-theory/01-postal-equivalence.md) - model: [01-postal-equivalence.model.py](postal-zone-generation-theory/models/01-postal-equivalence.model.py)
   2. [Zone Design Objectives](postal-zone-generation-theory/02-zone-design-objectives.md) - model: [02-zone-design-objectives.model.py](postal-zone-generation-theory/models/02-zone-design-objectives.model.py)
   3. [No-Postcode and Weak-Postcode Regions](postal-zone-generation-theory/03-no-postcode-and-weak-postcode-regions.md) - model: [03-no-postcode-and-weak-postcode-regions.model.py](postal-zone-generation-theory/models/03-no-postcode-and-weak-postcode-regions.model.py)
-

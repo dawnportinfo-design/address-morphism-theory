@@ -120,4 +120,3 @@ candidates.
 The finite model does not prove global candidate completeness. It proves that,
 given a candidate set and evidence set, the AMT resolver behaves safely with
 respect to threshold, uniqueness, contradiction, and public projection rules.
-

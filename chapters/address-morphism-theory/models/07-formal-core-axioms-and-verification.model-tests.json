@@ -1,0 +1,22 @@
+{
+  "chapter": "07-formal-core-axioms-and-verification.md",
+  "model": "chapters/address-morphism-theory/models/07-formal-core-axioms-and-verification.model.py",
+  "fixtures": [
+    {
+      "id": "partiality-allows-unresolved",
+      "expected": "empty candidate set returns unresolved, not a guessed referent"
+    },
+    {
+      "id": "near-tie-blocks-pid",
+      "expected": "near-tie candidates return ambiguous and no PID"
+    },
+    {
+      "id": "zk-boundary-requires-resolved-envelope",
+      "expected": "ZK predicate checks depend on a resolved AMT envelope"
+    },
+    {
+      "id": "benchmark-case-names-required-fields",
+      "expected": "benchmark packs must include region, use case, source policy, fixture type, metrics, and failure behavior"
+    }
+  ]
+}

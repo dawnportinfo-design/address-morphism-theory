@@ -12,7 +12,9 @@ or unverified research?
 
 1. `theory/README.md`
 2. `specification/README.md`
+   - `specification/circuit-readiness-matrix.md`
 3. `implementation/README.md`
+   - `implementation/threat-model.md`
 4. `applications/README.md`
 5. `unverified/README.md`
 
@@ -34,3 +36,12 @@ Other ZK papers are companions, localized versions, or historical drafts. See
 - Do not publish proof internals as release fixtures.
 - Public signals must stay small and verifier-oriented.
 - Production ZK claims require circuit implementation, review, and audit.
+
+## Circuit Readiness And Threat Model
+
+- Circuit-readiness matrix:
+  `zk/specification/circuit-readiness-matrix.md`
+- Threat model:
+  `zk/implementation/threat-model.md`
+- Local check:
+  `npm run verify:zk-circuit-readiness`

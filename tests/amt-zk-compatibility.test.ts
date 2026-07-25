@@ -21,4 +21,3 @@ test('disputed states are policy dependent', () => {
   assert.equal(decideZkPredicateEligibility('disputed', 'anonymous_rate_limit'), 'policy_dependent');
   assert.equal(decideZkPredicateEligibility('disputed', 'delivery_zone_eligibility'), 'policy_dependent');
 });
-

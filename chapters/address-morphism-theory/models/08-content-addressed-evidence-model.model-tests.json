@@ -1,0 +1,26 @@
+{
+  "chapter": "08-content-addressed-evidence-model.md",
+  "model": "chapters/address-morphism-theory/models/08-content-addressed-evidence-model.model.py",
+  "fixtures": [
+    {
+      "id": "same-content-same-digest",
+      "expected": "canonical content has the same digest across source hints and line endings"
+    },
+    {
+      "id": "tamper-changes-digest",
+      "expected": "changed canonical content changes the digest"
+    },
+    {
+      "id": "bundle-root-order-independent",
+      "expected": "evidence bundle root is stable under artifact reordering"
+    },
+    {
+      "id": "missing-transform-parent-rejects",
+      "expected": "derived evidence without parent digests is rejected"
+    },
+    {
+      "id": "unsafe-artifact-blocks-publication",
+      "expected": "private or unredacted artifacts cannot be used in public fixtures"
+    }
+  ]
+}

@@ -92,4 +92,3 @@ This compatibility layer does not claim:
 - address data can be placed on chain safely;
 - a proof should reveal raw address text, recipient identity, witness material,
   or precise private coordinates.
-

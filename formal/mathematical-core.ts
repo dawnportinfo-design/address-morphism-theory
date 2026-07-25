@@ -142,4 +142,3 @@ export function estimateFiniteResolutionComplexity(candidateCount: number, evide
   }
   return `O(${candidateCount} + ${evidenceCount})`;
 }
-

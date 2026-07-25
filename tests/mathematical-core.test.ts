@@ -96,4 +96,3 @@ test('finite complexity estimate is explicit', () => {
   assert.equal(estimateFiniteResolutionComplexity(12, 40), 'O(12 + 40)');
   assert.throws(() => estimateFiniteResolutionComplexity(-1, 0));
 });
-
