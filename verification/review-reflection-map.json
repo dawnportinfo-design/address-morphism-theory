@@ -1,0 +1,207 @@
+{
+  "schemaVersion": "amt-review-reflection-map-v0.1",
+  "principle": "Every high-value review finding must point to the AMT body files, appendices, executable models, and tests that reflect it.",
+  "items": [
+    {
+      "id": "formal-core-promoted-from-gap-audit",
+      "category": "formal-core",
+      "sourceReview": "verification/repository-content-gap-audit.md",
+      "reviewFinding": "The review requested a short formal core and executable reference model, not only long narrative drafts.",
+      "targetFiles": [
+        "paper/29-mathematical-model-core.md",
+        "formal/mathematical-core.ts",
+        "tests/mathematical-core.test.ts"
+      ],
+      "requiredEvidence": [
+        {
+          "file": "paper/29-mathematical-model-core.md",
+          "mustContain": [
+            "Axiom 1: Candidate Sufficiency",
+            "Existence Theorem",
+            "Uniqueness Theorem",
+            "Non-Claim"
+          ]
+        },
+        {
+          "file": "formal/mathematical-core.ts",
+          "mustContain": [
+            "resolveFiniteAMT",
+            "canIssuePid",
+            "projectPublicResolution"
+          ]
+        },
+        {
+          "file": "tests/mathematical-core.test.ts",
+          "mustContain": [
+            "existence theorem executable form",
+            "uniqueness theorem executable form"
+          ]
+        }
+      ],
+      "executableChecks": [
+        "tests/mathematical-core.test.ts"
+      ]
+    },
+    {
+      "id": "counterexamples-promoted-to-appendices-and-tests",
+      "category": "counterexample",
+      "sourceReview": "verification/repository-content-gap-audit.md",
+      "reviewFinding": "Counterexamples should become first-class theory artifacts instead of hidden caveats.",
+      "targetFiles": [
+        "appendices/C-counterexamples.md",
+        "appendices/H-proof-appendix-basic-propositions.md",
+        "tests/unresolvability.test.ts"
+      ],
+      "requiredEvidence": [
+        {
+          "file": "appendices/C-counterexamples.md",
+          "mustContain": [
+            "Same String, Different Referents",
+            "Privacy-Preserving Proof Without Candidate Completeness"
+          ]
+        },
+        {
+          "file": "appendices/H-proof-appendix-basic-propositions.md",
+          "mustContain": [
+            "Normalization Does Not Imply Referent Equality",
+            "Candidate Insufficiency Requires Abstention"
+          ]
+        },
+        {
+          "file": "tests/unresolvability.test.ts",
+          "mustContain": [
+            "empty candidates remain unresolved",
+            "multiple sufficient candidates are ambiguous"
+          ]
+        }
+      ],
+      "executableChecks": [
+        "tests/unresolvability.test.ts"
+      ]
+    },
+    {
+      "id": "s-priority-unverified-boundary-is-body-safe",
+      "category": "unverified-boundary",
+      "sourceReview": "verification/address-morphism-theory-unverified-items.md",
+      "reviewFinding": "Highest-risk unverified claims must be decomposed and kept out of unsafe body claims.",
+      "targetFiles": [
+        "paper/25-limitations.md",
+        "verification/address-morphism-theory-unverified-items.md",
+        "verification/s-priority-decomposition-verification.md",
+        "scripts/verify_s_priority_decomposition.py"
+      ],
+      "requiredEvidence": [
+        {
+          "file": "paper/25-limitations.md",
+          "mustContain": [
+            "AMT does not claim complete global address coverage",
+            "Real deployments still require"
+          ]
+        },
+        {
+          "file": "verification/address-morphism-theory-unverified-items.md",
+          "mustContain": [
+            "最優先の未検証項目",
+            "ZK proof 関連で未検証"
+          ]
+        },
+        {
+          "file": "verification/s-priority-decomposition-verification.md",
+          "mustContain": [
+            "Required failure behavior",
+            "ZK-ready",
+            "Forbidden Claims"
+          ]
+        }
+      ],
+      "executableChecks": [
+        "scripts/verify_s_priority_decomposition.py"
+      ]
+    },
+    {
+      "id": "zk-boundary-reflected-as-compatibility-gate",
+      "category": "zk-compatibility",
+      "sourceReview": "verification/address-morphism-theory-paper-omission-check.md",
+      "reviewFinding": "ZK and AGID/AOID material should not be folded back into AMT as solved core theory.",
+      "targetFiles": [
+        "paper/28-amt-envelope-and-zk-predicate-boundary.md",
+        "compatibility/zk-address-predicates.md",
+        "compatibility/amt-zk-compatibility-matrix.json",
+        "formal/amt-zk-compatibility.ts",
+        "tests/amt-zk-compatibility.test.ts"
+      ],
+      "requiredEvidence": [
+        {
+          "file": "paper/28-amt-envelope-and-zk-predicate-boundary.md",
+          "mustContain": [
+            "The proof layer must not upgrade the resolution layer",
+            "manual review"
+          ]
+        },
+        {
+          "file": "compatibility/amt-zk-compatibility-matrix.json",
+          "mustContain": [
+            "\"resolutionState\": \"ambiguous\"",
+            "\"proofEligibility\": \"manual_review\""
+          ]
+        },
+        {
+          "file": "tests/amt-zk-compatibility.test.ts",
+          "mustContain": [
+            "partial AMT state cannot upgrade",
+            "unsafe AMT states block proof issuance"
+          ]
+        }
+      ],
+      "executableChecks": [
+        "tests/amt-zk-compatibility.test.ts"
+      ]
+    },
+    {
+      "id": "payment-like-address-use-reflected-as-application-model",
+      "category": "application-model",
+      "sourceReview": "verification/main5-formal-additions.md",
+      "reviewFinding": "Address use should be modeled like a transaction rail where disclosure is scoped by role and purpose.",
+      "targetFiles": [
+        "paper/27-address-payment-rails.md",
+        "formal/address-payment-rails.ts",
+        "tests/address-payment-rails.test.ts",
+        "appendices/D-verification-map.md"
+      ],
+      "requiredEvidence": [
+        {
+          "file": "paper/27-address-payment-rails.md",
+          "mustContain": [
+            "Address Payment Rails",
+            "Raw Address Minimization",
+            "Model hook: `formal/address-payment-rails.ts`, `tests/address-payment-rails.test.ts`."
+          ]
+        },
+        {
+          "file": "formal/address-payment-rails.ts",
+          "mustContain": [
+            "authorizeAddressUse",
+            "captureAddressUse",
+            "settleAddressReceipt"
+          ]
+        },
+        {
+          "file": "tests/address-payment-rails.test.ts",
+          "mustContain": [
+            "authorizes, captures, and settles",
+            "public transaction safety rejects"
+          ]
+        },
+        {
+          "file": "appendices/D-verification-map.md",
+          "mustContain": [
+            "Address use can be payment-like"
+          ]
+        }
+      ],
+      "executableChecks": [
+        "tests/address-payment-rails.test.ts"
+      ]
+    }
+  ]
+}

@@ -51,6 +51,9 @@ states are part of the theory, not implementation failures.
   trust and artifact roadmap.
 - **Reviewer:** read `verification/main5-formal-additions.md` to see which
   manuscript ideas were promoted into definitions, theorems, and tests.
+- **Review maintainer:** run `npm run verify:review-reflection` and read
+  `verification/review-reflection-diff.md` to confirm that review findings are
+  reflected into body chapters, appendices, formal models, and tests.
 - **Risk reviewer:** run `npm run verify:s-priority-decomposition` and read
   `verification/s-priority-decomposition-verification.md` to see how the top
   unverified claims are split by region, use case, source, and failure mode.
@@ -121,6 +124,7 @@ are small local references for claims, not production systems.
 
 ```powershell
 npm run verify:model
+npm run verify:review-reflection
 npm run verify:formal-tree
 npm run verify:chapters
 npm run verify:predicate-dsl

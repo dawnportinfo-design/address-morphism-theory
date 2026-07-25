@@ -18,6 +18,8 @@ const requiredFiles = [
   'papers/address-morphism-theory-ja-v1-master.md',
   'papers/address-morphism-theory-ii-zero-knowledge-address-predicates.md',
   'verification/repository-content-gap-audit.md',
+  'verification/review-reflection-diff.md',
+  'verification/review-reflection-map.json',
   'verification/main5-formal-additions.md',
   'verification/address-morphism-executable-expectations.md',
   'verification/s-priority-verification-feasibility.md',
@@ -30,6 +32,7 @@ const requiredFiles = [
   'scripts/verify_predicate_dsl.py',
   'scripts/verify_s_priority_plan.py',
   'scripts/verify_s_priority_decomposition.py',
+  'scripts/verify_review_reflection.py',
   'scripts/build_address_morphism_full_pdfs.cjs',
 ];
 

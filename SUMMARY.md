@@ -56,3 +56,8 @@ reviewed chapter by chapter.
 - [Unresolvability](formal/unresolvability.ts)
 - [Verification Map](formal/verification-map.ts)
 - [Address Payment Rails](formal/address-payment-rails.ts)
+
+## Review Reflection
+
+- [Review Reflection Diff Gate](verification/review-reflection-diff.md)
+- [Review Reflection Map](verification/review-reflection-map.json)
